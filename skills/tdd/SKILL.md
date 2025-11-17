@@ -46,7 +46,26 @@ Write the MINIMUM code to make the test pass.
 - Verify all tests pass (new and existing)
 - Expected outcome: All tests GREEN
 
-### 4. REPEAT: Next Test
+### 4. REFACTOR: Improve Code Quality
+
+After tests pass, consider refactoring to improve code quality.
+
+**Key principle**: Refactor only when tests are GREEN. Tests protect you during refactoring.
+
+**When to refactor:**
+- Code duplication exists
+- Code is unclear or hard to understand
+- Better patterns or abstractions are apparent
+- Performance can be improved
+
+**Refactoring safety:**
+- Run ALL tests after each refactoring change
+- If any test fails, revert and try a different approach
+- Keep refactoring changes small and incremental
+
+**Note**: Refactoring is optional on each cycle. You can skip if code is already clean.
+
+### 5. REPEAT: Next Test
 
 Only after all tests pass, write the NEXT single test and repeat the cycle.
 
@@ -99,7 +118,7 @@ If all tests don't pass:
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 1. Write ONE test for requirement              │
+│ 1. RED: Write ONE test for requirement         │
 └────────────────┬────────────────────────────────┘
                  │
                  ▼
@@ -110,7 +129,7 @@ If all tests don't pass:
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 3. Write minimal implementation                │
+│ 3. GREEN: Write minimal implementation         │
 └────────────────┬────────────────────────────────┘
                  │
                  ▼
@@ -121,7 +140,7 @@ If all tests don't pass:
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 5. Run ALL tests                               │
+│ 5. VERIFY: Run ALL tests                       │
 │    Expected: All PASS                          │
 └────────────────┬────────────────────────────────┘
                  │
@@ -131,7 +150,13 @@ If all tests don't pass:
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 6. More requirements? ──Yes──> Repeat          │
+│ 6. REFACTOR: Improve code          │
+│    Run ALL tests after each change             │
+└────────────────┬────────────────────────────────┘
+                 │
+                 ▼
+┌─────────────────────────────────────────────────┐
+│ 7. More requirements? ──Yes──> Repeat          │
 │                        │                        │
 │                       No                        │
 │                        │                        │
@@ -218,6 +243,8 @@ Use this checklist for EVERY test:
 - [ ] Minimal implementation written
 - [ ] Test run in isolation and passed (GREEN) ✓
 - [ ] ALL tests run and passed (VERIFY) ✓
+- [ ] Code refactored if needed (optional)
+- [ ] ALL tests still pass after refactoring
 - [ ] No broken tests
 - [ ] Ready for next test
 
