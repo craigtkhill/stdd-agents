@@ -40,8 +40,7 @@ After writing spec:
 
 ## Commit Workflow
 
-- Use conventional commits style (feat:, fix:, test:, docs:, refactor:)
-- Check for remote updates before committing
+**Use the `commit-message` skill for git commit guidelines.**
 
 ## Do NOT Proceed Without
 
