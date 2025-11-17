@@ -1,18 +1,29 @@
 # ATUI Tools
 
 ```
-   ___  ________  ______
-  / _ |/_  __/ / / /  _/
- / __ | / / / /_/ // /
-/_/ |_|/_/  \____/___/
+    ___    ________  __  ______   ______            __
+   /   |  /_  __/ / / / /  _/   /_  __/___  ____  / /____
+  / /| |   / / / / / /  / /      / / / __ \/ __ \/ / ___/
+ / ___ |  / / / /_/ / _/ /      / / / /_/ / /_/ / (__  )
+/_/  |_| /_/  \____/ /___/     /_/  \____/\____/_/____/
 
-Agentic Terminal User Interface
+         Agentic Terminal User Interface Tools
 ```
 
 **Agentic Terminal User Interface tools, agents and configs following a Spec-Test-Driven Development process**
 
-## What is ATUI?
+## What are ATUIs?
 
-ATUI provides a structured workflow for developing AI-assisted terminal applications using agentic terminal user interfaces (Claude Code, Codex, OpenCode), emphasizing specification-first development with comprehensive testing.
+**Agentic Terminal User Interfaces (ATUIs)** are AI-powered development environments that combine terminal capabilities with agentic pair programmers. Examples include:
 
-*Note.* The aspiration is to make this repo ATUI agnostic. However, it is currently heavily configured for Claude Code.
+- **Claude Code**
+- **Codex**
+- **OpenCode**
+
+ATUIs act as intelligent pair programmers, understanding context, executing commands, reading/writing files, and following structured workflows to help developers build software more efficiently.
+
+## What is ATUI Tools?
+
+ATUI tools provides a structured workflow for developing applications using these ATUIs, emphasizing specification-first development with comprehensive testing.
+
+*Note.* The aspiration is to make this toolkit ATUI agnostic. However, it is currently heavily configured for Claude Code.
