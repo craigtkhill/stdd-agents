@@ -27,3 +27,29 @@ ATUIs act as intelligent pair programmers, understanding context, executing comm
 ATUI tools provides a structured workflow for developing applications using these ATUIs, emphasizing specification-first development with comprehensive testing.
 
 *Note.* The aspiration is to make this toolkit ATUI agnostic. However, it is currently heavily configured for Claude Code.
+
+## Quick Start
+
+### Bootstrap Your Project with ATUI Tools
+
+Add ATUI Tools to your project as a git submodule in the `.claude/` directory:
+
+```bash
+# In your project root
+git submodule add https://github.com/craigtkhill/atui-tools.git .claude
+
+# Initialize and update the submodule
+git submodule update --init --recursive
+```
+
+### Update ATUI Tools
+
+To get the latest updates:
+
+```bash
+cd .claude
+git pull origin main
+cd ..
+git add .claude
+git commit -m "chore: update atui-tools submodule"
+```
