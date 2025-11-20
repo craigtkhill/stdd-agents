@@ -4,7 +4,23 @@ Python-specific patterns and conventions for Test-Driven Development.
 
 ## Test File Location
 
-Tests go in `test.py` within the feature directory (NOT in a separate `tests/` directory):
+### Unit Tests
+Unit tests go in `test.py` within the feature directory (NOT in a separate `tests/` directory).
+
+### Integration Tests
+Integration tests go in the `tests/` directory at the project root.
+
+**When to write integration tests:**
+- Testing interactions between multiple modules
+- **Tactical purposes only** - integration tests are expensive to run and maintain
+- Only add integration tests when unit tests cannot adequately verify the behavior
+
+**Integration test structure:**
+```
+tests/
+  __init__.py
+  test_feature_integration.py
+```
 
 ## Test Framework: pytest
 
@@ -23,8 +39,40 @@ def test_should_{expected_behavior}(self) -> None:
     """REQ-XXX-NNN: Requirement description"""
     # Arrange
     # Act
-    # Assert
+    # Assert - ONE assertion only
 ```
+
+**CRITICAL: One Assert Per Test**
+
+Each test must have exactly ONE assertion. This ensures:
+- Clear test failure messages
+- Easy to identify what broke
+- Tests validate one specific behavior
+- Better test organization
+- Better parallelization
+
+**Exception: Multiple assertions only when:**
+- Testing intrinsically coupled behavior that cannot logically be separated
+  - Every effort must be made to decouple it first however.
+- The assertions verify different aspects of a single, indivisible outcome
+
+**Example of acceptable multiple assertions:**
+```python
+def test_should_parse_and_validate_complex_structure(self) -> None:
+    """When all assertions verify aspects of one indivisible outcome."""
+    result = parse_complex_data(input)
+    # These assertions all verify the same conceptual outcome
+    assert result.is_valid
+    assert result.error_count == 0
+    assert result.data is not None
+```
+
+**When tests are expensive (DB, APIs, slow setup):**
+- Don't use multiple assertions to optimize
+- Instead, write **acceptance tests** (not unit tests)
+- Acceptance tests are designed for integration/expensive operations
+
+**Default rule**: Write one assert per test unless assertions are intrinsically coupled.
 
 ### Required Imports
 

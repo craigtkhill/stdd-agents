@@ -74,7 +74,17 @@ Only after all tests pass, write the NEXT single test and repeat the cycle.
 ### Rule 1: One Test at a Time
 - ❌ Do NOT write multiple tests before implementing
 - ❌ Do NOT write all tests upfront
-- ✅ DO write ONE test → implement → verify → next test
+- ❌ Do NOT write multiple tests in a single file edit
+- ✅ DO write ONE test → run it → see result → update spec → next test
+- ✅ Write exactly one test function, then stop
+- ✅ After test passes, update SPEC.md to mark requirement as tested
+
+**Updating SPEC.md markers:**
+- After writing unit test that passes: `[O][O]` → `[U][O]` (test exists, code pending)
+- After code passes unit test: `[U][O]` → `[U][X]` (test and code complete)
+- After writing acceptance test that passes: `[O][O]` → `[A][O]` (acceptance test exists, code pending)
+- After code passes acceptance test: `[A][O]` → `[A][X]` (acceptance test and code complete)
+- When acceptance test passes, mark related unit-tested features as implemented: `[U][O]` → `[U][X]`
 
 ### Rule 2: Always Run Tests
 Every test goes through three runs:
@@ -100,8 +110,9 @@ Every test goes through three runs:
 
 ### Rule 4: Test One Thing
 - Each test validates ONE behavior
-- One assertion per test (unless performance-critical)
+- One assertion per test (unless assertions are intrinsically coupled)
 - Clear test names describe what's being tested
+- Multiple tests enable better parallelization
 
 ### Rule 5: Fail Fast
 If all tests don't pass:
@@ -167,6 +178,43 @@ If all tests don't pass:
 
 ## Test Organization
 
+### Unit Tests vs Acceptance Tests vs Integration Tests
+
+**Unit Tests:**
+- Test individual functions/classes in isolation
+- Fast, focused, and run frequently
+- Located within the feature directory
+- Should cover the vast majority of your testing needs
+- Marked with `[U]` in SPEC.md
+
+**Acceptance Tests:**
+- Test complete features from a user/business perspective
+- Verify requirements are met end-to-end within a feature
+- Located within the feature directory
+- Test scenarios from the spec (Given/When/Then)
+- May involve multiple units working together within the same feature
+- Marked with `[A]` in SPEC.md
+- **When to use:**
+  - Testing complete user workflows that require external APIs
+  - Verifying business requirements are satisfied
+  - Testing features that span multiple units within the feature
+  - End-to-end validation of a feature
+
+**Integration Tests:**
+- Test interactions between multiple modules or external systems
+- Slower, more complex, expensive to maintain
+- Located in `tests/` directory at project root
+- **Use sparingly and only for tactical purposes:**
+  - When unit tests cannot adequately verify the behavior
+  - Testing interactions with external dependencies (databases, APIs, LLMs)
+  - End-to-end workflows that span multiple modules
+  - Verifying third-party library integration (e.g., Pydantic AI model introspection)
+
+**Test Hierarchy:**
+1. **Default to unit tests** - fast, isolated, cover individual behaviors
+2. **Use acceptance tests** - when you need end-to-end feature validation
+3. **Use integration tests sparingly** - only for tactical external integration needs
+
 ### Test Grouping
 Organize tests by requirement sections:
 - Group related tests together
@@ -230,7 +278,7 @@ Write test_3 → Run (RED) → Implement → Run (GREEN) → Verify all tests
 
 ### ❌ Writing Bad Tests
 - Tests that don't fail when they should
-- Tests with multiple assertions (test too broad)
+- Tests with multiple assertions (unless intrinsically coupled)
 - Tests that don't clearly document what they're testing
 
 ## Checklist Before Moving to Next Test
@@ -243,6 +291,8 @@ Use this checklist for EVERY test:
 - [ ] Minimal implementation written
 - [ ] Test run in isolation and passed (GREEN) ✓
 - [ ] ALL tests run and passed (VERIFY) ✓
+- [ ] **SPEC.md updated with test marker** ([U][O] or [A][O]) ✓
+- [ ] **SPEC.md updated with implementation marker** ([U][X] or [A][X]) if code complete ✓
 - [ ] Code refactored if needed (optional)
 - [ ] ALL tests still pass after refactoring
 - [ ] No broken tests
