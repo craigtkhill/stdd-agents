@@ -5,83 +5,58 @@ description: Guidelines for adding dependencies to projects - critical rule to n
 
 # Install Dependencies
 
-## Overview
+## Philosophy
 
-Guidelines for adding and managing dependencies across all projects in the workspace.
+**Core Principle**: Let package managers handle version resolution automatically. Never specify version numbers unless absolutely necessary.
 
-## Critical Rule: Never Specify Version Numbers
+## Why This Approach
 
-**ALWAYS** let package managers handle versioning automatically.
-
-### ❌ WRONG - Do NOT specify versions:
-```toml
-# Python (pyproject.toml)
-dependencies = [
-    "datamodel-code-generator>=0.25.0",  # ❌ NO!
-    "pydantic>=2.0",                      # ❌ NO!
-]
-```
-
-```json
-// JavaScript (package.json)
-{
-  "dependencies": {
-    "react": "^18.0.0",  // ❌ NO!
-    "axios": "~1.6.0"    // ❌ NO!
-  }
-}
-```
-
-```toml
-# Rust (Cargo.toml)
-[dependencies]
-serde = "1.0"  # ❌ NO!
-```
-
-### ✅ CORRECT - Omit versions entirely:
-```toml
-# Python (pyproject.toml)
-dependencies = [
-    "datamodel-code-generator",  # ✅ YES!
-    "pydantic",                  # ✅ YES!
-]
-```
-
-```json
-// JavaScript (package.json)
-{
-  "dependencies": {
-    "react": "*",     // ✅ YES!
-    "axios": "latest" // ✅ YES!
-  }
-}
-```
-
-```toml
-# Rust (Cargo.toml)
-[dependencies]
-serde = "*"  # ✅ YES!
-```
-
-## Why This Rule Exists
-
-1. **uv/npm/cargo are smarter**: Package managers resolve compatible versions automatically
-2. **Avoid version conflicts**: Manual versions often create dependency hell
+1. **Package managers are smarter**: Modern package managers (uv, npm, cargo) resolve compatible versions automatically
+2. **Avoid version conflicts**: Manual version specifications often create dependency hell
 3. **Get latest features**: Always use the newest compatible versions
 4. **Simpler maintenance**: No need to manually track and update versions
+5. **Trust the ecosystem**: Package managers understand semver and compatibility better than manual pinning
 
-## When Adding Dependencies
+## Universal Rules
 
-1. Add dependency name only (no version)
-2. Let the package manager resolve the version
-3. Run the appropriate install command:
-   - Python: `uv sync`
-   - JavaScript: `npm install`
-   - Rust: `cargo build`
+### ✅ DO:
+- Add dependency names without version numbers
+- Let the package manager resolve versions
+- Trust the lock file (package-lock.json, Cargo.lock, uv.lock)
+- Update dependencies regularly through the package manager
 
-## Exception
+### ❌ DON'T:
+- Specify version numbers (>=, ^, ~, =)
+- Manually pin versions without good reason
+- Override package manager decisions
+- Commit version specifications to dependency files
 
-The ONLY time to specify a version is when there's a **known breaking change** or **compatibility issue** that requires pinning to a specific version. This should be:
-- Documented with a comment explaining why
-- Reviewed in PR/code review
-- Treated as temporary until the issue is resolved
+## Exception Case
+
+The ONLY time to specify a version is when there's a **known breaking change** or **compatibility issue** that requires pinning to a specific version.
+
+**Requirements for version pinning:**
+- Must be documented with a comment explaining why
+- Must be treated as temporary until the issue is resolved
+- Should include link to issue/ticket tracking the problem
+
+**Example:**
+```toml
+dependencies = [
+    "problematic-lib",  # Pinned to v1.2.3 due to breaking change in v1.3.0 (see issue #123)
+]
+```
+
+## Language-Specific Details
+
+For language-specific syntax and examples:
+- Python: See [PYTHON.md](PYTHON.md)
+- TypeScript/JavaScript: See [TYPESCRIPT.md](TYPESCRIPT.md)
+- Rust: See [RUST.md](RUST.md)
+
+## Workflow
+
+1. **Add dependency**: Add dependency name only (no version)
+2. **Let package manager resolve**: Run the appropriate install/sync command
+3. **Verify**: Check that dependency was resolved and installed
+4. **Commit lock file**: Always commit the updated lock file
