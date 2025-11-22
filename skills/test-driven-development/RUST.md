@@ -13,7 +13,7 @@ Rust-specific patterns and conventions for Test-Driven Development.
 // src/feature/models.rs
 
 // ============================================
-// TESTS (must be above implementation)
+// TESTS
 // ============================================
 #[cfg(test)]
 mod tests {
@@ -21,12 +21,14 @@ mod tests {
 
     #[test]
     fn test_should_do_something() {
+        // REQ-XXX-001
+
         // Test implementation
     }
 }
 
 // ============================================
-// IMPLEMENTATION (must be below tests)
+// IMPLEMENTATION
 // ============================================
 pub struct Model {
     data: Vec<String>,
@@ -107,7 +109,7 @@ Follow this pattern:
 ```rust
 #[test]
 fn test_should_{expected_behavior}() {
-    // REQ-XXX-NNN: Requirement description
+    // REQ-XXX-NNN
 
     // Arrange
 
@@ -116,6 +118,17 @@ fn test_should_{expected_behavior}() {
     // Assert - ONE assertion only
 }
 ```
+
+**Requirement Comments:**
+- Place requirement ID as FIRST line INSIDE the test function
+- Use ONLY the requirement ID (e.g., `// REQ-XXX-NNN`)
+- DO NOT include the full requirement description
+- The requirement ID is sufficient to link to SPEC.md
+
+**Arrange/Act/Assert Comments:**
+- Use simple comments: `// Arrange`, `// Act`, `// Assert`
+- DO NOT add extra details or descriptions after these labels
+- The code itself should be self-documenting
 
 **CRITICAL: One Assert Per Test**
 
@@ -201,7 +214,7 @@ cargo test -- --test-threads=4  # Parallel with 4 threads
 // src/feature/models.rs
 
 // ============================================
-// TESTS (must be above implementation)
+// TESTS
 // ============================================
 #[cfg(test)]
 mod tests {
@@ -209,6 +222,8 @@ mod tests {
 
     #[test]
     fn test_should_validate_input() {
+        // REQ-XXX-001
+
         // Arrange
         let input = vec!["test".to_string()];
 
@@ -221,7 +236,7 @@ mod tests {
 }
 
 // ============================================
-// IMPLEMENTATION (must be below tests)
+// IMPLEMENTATION
 // ============================================
 pub struct Model {
     field: String,
