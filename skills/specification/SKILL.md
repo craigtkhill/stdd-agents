@@ -58,6 +58,16 @@ Group requirements into logical sections:
 - Keep requirements atomic and testable
 - One requirement per line
 
+**CRITICAL - User-Facing Requirements Only:**
+- Requirements must describe FEATURES from the user's perspective
+- Each requirement should be stated ONLY ONCE in the spec
+- DO NOT create separate requirements for implementation details
+
+**Before adding a requirement, ask:**
+1. Is this something the user directly experiences or cares about?
+2. Have I already stated this requirement elsewhere in the spec or in another spec file?
+3. Is this describing WHAT the system does for the user, or HOW it does it internally?
+
 ### 4. Scenarios
 
 **IMPORTANT:** ONLY add scenarios for modules that require end to end testing with other modules. By default don't add scenarios but elicit from the human if they think Scenarios/Acceptance Testing apply to this feature.  
