@@ -58,6 +58,11 @@ Group requirements into logical sections:
 - Keep requirements atomic and testable
 - One requirement per line
 
+**CRITICAL - Atomic Requirements:**
+- Each requirement must test ONE specific thing
+- If a requirement has "and" or lists multiple attributes, split it into separate requirements
+- Each requirement should map to one test (or a small set of closely related tests)
+
 **CRITICAL - User-Facing Requirements Only:**
 - Requirements must describe FEATURES from the user's perspective
 - Each requirement should be stated ONLY ONCE in the spec
