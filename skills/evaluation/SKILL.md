@@ -28,16 +28,19 @@ Use this template for all spec.md files:
 
 ## Requirements
 Format: `[IS-EVAL-IMPLEMENTED] IDENTIFIER: example case`
+- G = matches ground truth
 - C = implemented via code
 - L = implemented via LLM as judge using rubric
+- O = not yet implemented
 
 ### [Category Name 1]
-- [C] REQ-EVAL-XX-001: Description of first code-based requirement
+- [G] REQ-EVAL-XX-001: Description of first code-based requirement
 - [C] REQ-EVAL-XX-002: Description of second code-based requirement
 
 ### [Category Name 2]
 - [L] REQ-EVAL-XX-003: Description of LLM-judged requirement
-- [L] REQ-EVAL-XX-003: Description of LLM-judged requirement
+- [O] REQ-EVAL-XX-004: Description of LLM-judged requirement
+
 ```
 
 **Template Rules:**
@@ -45,6 +48,33 @@ Format: `[IS-EVAL-IMPLEMENTED] IDENTIFIER: example case`
   - `XX` = 2-3 letter eval abbreviation (e.g., AG for action_generation, AS for action_scenarios)
   - `NNN` = Sequential 3-digit number starting at 001
 - **Implementation Types**:
+  - `[G]` = Ground truth validation (matches expected output)
   - `[C]` = Code-based validation (deterministic checks)
   - `[L]` = LLM-as-judge validation (quality assessment)
+  - `[O]` = Not yet implemented (planned for future)
 - **Categories**: Group related requirements logically
+
+## rubric.md Template
+
+Use this template for all rubric.md files:
+
+```markdown
+# [Feature Name] Reasoning Trace Rubric
+
+## Format
+`[PASS/FAIL] RUBRIC-ID: Criterion description`
+
+## Based on: [Concrete example with specific values]
+
+### [Category Name]
+- [ ] RUB-XX-001: Specific, objective criterion
+- [ ] RUB-XX-002: Another specific criterion
+```
+
+**Template Rules:**
+- **Identifier Format**: `RUB-XX-NNN` (matches spec.md abbreviation)
+- **Categories**: Organize criteria into logical groups
+- **Criteria**: Write concrete, objectively verifiable rules, not subjective assessments
+- **Specificity**: Reference actual values, fields, or behaviors that can be checked
+- **Checkboxes**: Use `- [ ]` format for LLM judge to mark pass/fail
+- **Avoid subjective language**: Do not use vague terms; state exactly what to verify
