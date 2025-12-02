@@ -7,17 +7,14 @@
   "plugins": [
     {
       "name": "stdd-agents",
-      "source": ".",
+      "source": "./",
       "description": "Spec-Test-Driven Development workflow plugin with skills for specification writing, test-driven development, and commit management",
       "version": "1.0.0",
       "author": {
         "name": "Craig Hill"
       },
       "homepage": "https://github.com/craigtkhill/stdd-agents",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/craigtkhill/stdd-agents.git"
-      }
+      "repository": "https://github.com/craigtkhill/stdd-agents.git"
     }
   ]
 }
