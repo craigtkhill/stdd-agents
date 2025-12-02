@@ -58,6 +58,8 @@ Write the MINIMUM code to make the test pass.
 
 After tests pass, consider refactoring to improve code quality.
 
+**Use the `refactor` skill for detailed refactoring guidance.**
+
 **Key principle**: Refactor only when tests are GREEN. Tests protect you during refactoring.
 
 **When to refactor:**
@@ -65,6 +67,7 @@ After tests pass, consider refactoring to improve code quality.
 - Code is unclear or hard to understand
 - Better patterns or abstractions are apparent
 - Performance can be improved
+- Before implementing new features that may duplicate existing patterns
 
 **Refactoring safety:**
 - Run ALL tests after each refactoring change

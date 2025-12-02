@@ -1,7 +1,7 @@
 {
   "name": "stdd-agents",
   "description": "Spec-Test-Driven Development workflow plugin with skills for specification writing, test-driven development, and commit management",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Craig Hill"
   }
