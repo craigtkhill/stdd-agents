@@ -11,20 +11,14 @@
           Spec-Test-Driven Development Agents
 ```
 
-**ATUI agents and configs following a Spec-Test-Driven Development process**
+**Agents and configs following a Spec-Test-Driven Development process**
 
-## What are ATUIs?
-
-**Agentic Terminal User Interfaces (ATUIs)** are development environments that allow interaction with software engineering agents on the terminal. Examples include:
-
+This repository is designed for **Agentic Terminal User Interfaces (ATUIs)** like:
 - **Claude Code**
 - **Codex**
 - **OpenCode**
 - **Gemini CLI**
 
-ATUIs help with understanding context, executing commands, reading/writing files, and following structured workflows to enable developers build software more efficiently.
-
-## What is STDD Agents?
 
 STDD Agents provides a structured workflow for developing applications using ATUIs, emphasizing specification-first development with comprehensive testing to ensure stability while moving with higher velocity.
 
@@ -58,4 +52,11 @@ git pull origin main
 cd ..
 git add .claude
 git commit -m "chore: update stdd-agents submodule"
+```
+
+### Install as Claude Code Plugin
+
+```bash
+/plugin marketplace add https://github.com/craigtkhill/stdd-agents
+/plugin install stdd-agents@stdd-agents
 ```
