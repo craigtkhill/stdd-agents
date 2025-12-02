@@ -1,52 +1,54 @@
-# ATUI Tools
+# STDD Agents
 
 ```
-    ___    ________  __  ______   ______            __
-   /   |  /_  __/ / / / /  _/   /_  __/___  ____  / /____
-  / /| |   / / / / / /  / /      / / / __ \/ __ \/ / ___/
- / ___ |  / / / /_/ / _/ /      / / / /_/ / /_/ / (__  )
-/_/  |_| /_/  \____/ /___/     /_/  \____/\____/_/____/
+   _____ __________ ____     ___                     __
+  / ___//_  __/ __ / __ \   /   | ____ ____  ____  / /______
+  \__ \  / / / / / / / / /  / /| |/ __ `/ _ \/ __ \/ __/ ___/
+ ___/ / / / / /_/ / /_/ /  / ___ / /_/ /  __/ / / / /_(__  )
+/____/ /_/ /_____/_____/  /_/  |_\__, /\___/_/ /_/\__/____/
+                                 /____/
 
-         Agentic Terminal User Interface Tools
+          Spec-Test-Driven Development Agents
 ```
 
-**Agentic Terminal User Interface tools, agents and configs following a Spec-Test-Driven Development process**
+**ATUI agents and configs following a Spec-Test-Driven Development process**
 
 ## What are ATUIs?
 
-**Agentic Terminal User Interfaces (ATUIs)** are AI-powered development environments that combine terminal capabilities with agentic pair programmers. Examples include:
+**Agentic Terminal User Interfaces (ATUIs)** are development environments that allow interaction with software engineering agents on the terminal. Examples include:
 
 - **Claude Code**
 - **Codex**
 - **OpenCode**
+- **Gemini CLI**
 
-ATUIs act as intelligent pair programmers, understanding context, executing commands, reading/writing files, and following structured workflows to help developers build software more efficiently.
+ATUIs help with understanding context, executing commands, reading/writing files, and following structured workflows to enable developers build software more efficiently.
 
-## What is ATUI Tools?
+## What is STDD Agents?
 
-ATUI tools provides a structured workflow for developing applications using these ATUIs, emphasizing specification-first development with comprehensive testing.
+STDD Agents provides a structured workflow for developing applications using ATUIs, emphasizing specification-first development with comprehensive testing to ensure stability while moving with higher velocity.
 
 *Note.* The aspiration is to make this toolkit ATUI agnostic. However, it is currently heavily configured for Claude Code.
 
 ## Quick Start
 
-### Bootstrap Your Project with ATUI Tools
+### Bootstrap Your Project with STDD Agents
 
-Add ATUI Tools to your project as a git submodule in the `.claude/` directory:
+Add STDD Agents to your project as a git submodule in the `.claude/` directory:
 
 ```bash
 # In your project root
 # First, ensure your project is a git repository
 git init
 
-# Add ATUI Tools as a submodule
-git submodule add https://github.com/craigtkhill/atui-tools.git .claude
+# Add STDD Agents as a submodule
+git submodule add https://github.com/craigtkhill/stdd-agents.git .claude
 
 # Initialize and update the submodule
 git submodule update --init --recursive
 ```
 
-### Update ATUI Tools
+### Update STDD Agents
 
 To get the latest updates:
 
@@ -55,5 +57,5 @@ cd .claude
 git pull origin main
 cd ..
 git add .claude
-git commit -m "chore: update atui-tools submodule"
+git commit -m "chore: update stdd-agents submodule"
 ```
