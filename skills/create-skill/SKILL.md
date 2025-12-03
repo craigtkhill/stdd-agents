@@ -76,11 +76,16 @@ After frontmatter, elicit the human to add the skill instructions in markdown:
 
 ## Description Best Practices
 
-The description is **critical** for skill discovery. Include:
+The description is **critical** for skill discovery and invocation.
 
-1. **WHAT**: What does the skill do?
-2. **WHEN**: When should it be used?
-3. **KEY FEATURES**: What are the main capabilities?
+**Purpose**: Help Claude decide whether to READ the skill, not to contain the rules themselves.
+
+**Format**: "Use when [specific trigger]. Defines [what's inside]."
+
+**Guidelines:**
+1. **Start with trigger**: Begin with "Use when [action/situation]"
+2. **Be concise**: Keep under 200 characters if possible
+3. **Specific triggers**: Include clear conditions for when to invoke
 
 ## Supporting Files
 
