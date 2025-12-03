@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Test-Driven Development workflow using RED-GREEN-REFACTOR cycle - write one test, see it fail, implement minimal code, verify all tests pass, repeat
+description: Use when writing tests or implementing code. Defines RED-GREEN-REFACTOR cycle and test execution workflow.
 ---
 
 # Test-Driven Development (TDD) Skill

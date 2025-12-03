@@ -1,6 +1,6 @@
 ---
 name: install-dependencies
-description: Guidelines for adding dependencies to projects - critical rule to never specify version numbers, let package managers handle versioning automatically
+description: Use when adding project dependencies. Defines dependency management rules and language-specific patterns.
 ---
 
 # Install Dependencies

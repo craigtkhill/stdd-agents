@@ -1,6 +1,6 @@
 ---
 name: write-commit-message
-description: Guidelines for writing effective git commit messages using conventional commits style
+description: Use when creating git commits. Defines conventional commit format and message structure guidelines.
 ---
 
 # Commit Message Guidelines

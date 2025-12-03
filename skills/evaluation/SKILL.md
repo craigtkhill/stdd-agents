@@ -1,6 +1,6 @@
 ---
 name: evaluation
-description: Guidelines for creating evaluation suites, including spec.md templates, rubric structures, and code-based validation patterns. Use this when creating new evals or updating existing ones.
+description: Use when creating or updating agent evaluation suites. Defines eval structure, rubrics, and validation patterns.
 ---
 
 # Evaluation Skill

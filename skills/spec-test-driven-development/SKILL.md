@@ -1,6 +1,6 @@
 ---
 name: spec-test-driven-development
-description: Specification-Test-Driven Development workflow - write spec first, then tests, then implementation - uses specification and test-driven-development skills
+description: Use when user requests new features or functionality. Defines complete workflow from specification through testing to implementation.
 ---
 
 # Spec-TDD Development Workflow

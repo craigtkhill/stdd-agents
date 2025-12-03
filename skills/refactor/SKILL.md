@@ -1,6 +1,6 @@
 ---
 name: refactor
-description: Detailed guidance for the REFACTOR phase of TDD - emphasizes searching for existing patterns, extracting shared functionality, and avoiding code duplication before writing new implementations
+description: Use during REFACTOR phase of TDD or when code duplication is suspected. Defines search-first workflow and safe refactoring practices.
 ---
 
 # Refactor Skill

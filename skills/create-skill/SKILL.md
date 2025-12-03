@@ -1,6 +1,6 @@
 ---
 name: create-skill
-description: Guide for creating new skills - includes required file structure, YAML frontmatter format, naming conventions, and best practices for skill development
+description: Use when creating or modifying skills. Defines skill file structure, naming conventions, and integration patterns.
 ---
 
 # Creating Agent Skills

@@ -1,6 +1,6 @@
 ---
 name: specification
-description: Write specifications following project conventions - includes requirement format, scenario structure, and Given/When/Then patterns
+description: Use when writing or updating spec.md files. Defines requirement format, user story structure, and scenario patterns.
 ---
 
 # Specification Writing Skill
