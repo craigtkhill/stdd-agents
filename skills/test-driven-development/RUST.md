@@ -210,12 +210,27 @@ cargo test -- --test-threads=4  # Parallel with 4 threads
 ### Standard Pattern: Tests Above Implementation
 **CRITICAL**: Tests MUST be placed ABOVE implementation in the same file.
 
+**For files with structs, enums, and impl blocks, the order MUST be:**
+1. Imports
+2. Tests (#[cfg(test)] mod tests { ... })
+3. Type definitions (structs, enums - declarations only)
+4. Implementation (impl blocks, Default implementations, methods)
+5. Public functions
+
+**Rationale:**
+- Tests define the API contract first (TDD principle)
+- You see what needs to be implemented before writing it
+- Tests use `use super::*;` to access types defined later in file
+- Rust resolves all definitions in module scope, so this works perfectly
+
 ```rust
 // src/feature/models.rs
 
-// ============================================
-// TESTS
-// ============================================
+// 1. Imports
+use anyhow::Result;
+use std::path::Path;
+
+// 2. TESTS (FIRST!)
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -235,17 +250,32 @@ mod tests {
     }
 }
 
-// ============================================
-// IMPLEMENTATION
-// ============================================
+// 3. Type Definitions
 pub struct Model {
     field: String,
 }
 
+pub enum Status {
+    Active,
+    Inactive,
+}
+
+// 4. Implementations
 impl Model {
     pub fn new(field: String) -> Result<Self, String> {
         // implementation
     }
+}
+
+impl Default for Status {
+    fn default() -> Self {
+        Self::Active
+    }
+}
+
+// 5. Public Functions
+pub fn process_model(model: Model) -> Result<()> {
+    // implementation
 }
 ```
 
