@@ -26,9 +26,17 @@ Every SPEC.md file must follow this structure:
 
 ## Feature: {Brief Feature Title}
 As a {user role}
-I want to {capability}
-So that {benefit}
+I want to {goal/capability}
+Possible Solutions:
+- {Solution 1}
 ```
+
+**Rationale for User Goals + Possible Solutions:**
+- Focus on WHAT the user wants to achieve, not a specific HOW
+- Acknowledge that multiple solutions may exist to meet the user's goal
+- Solutions should be considered throughout implementation
+- Design the codebase to be modular enough to swap solutions without major refactoring
+- Keeps options open until implementation details are needed
 
 ### 2. Requirements Section
 ```markdown
