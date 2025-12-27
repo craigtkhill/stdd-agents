@@ -188,6 +188,11 @@ Refactoring is **Step 4** in the RED-GREEN-REFACTOR cycle:
 3. If refactoring: do it before adding new feature
 4. Then proceed with TDD cycle for new feature
 
+## File Organization
+
+**For guidance on splitting large files into modules:**
+See [FILE-ORGANIZATION.md](FILE-ORGANIZATION.md) for guidelines on when and how to split files.
+
 ## Practical Checklist
 
 Before writing new code:
