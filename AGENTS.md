@@ -1,11 +1,23 @@
-**CRITICAL**: You MUST list all skills so you know the capabilities and guidance available to you and make use of them when appropriate. For ALL software development tasks, you MUST read and use the `spec-test-driven-development` skill.
-**IMPORTANT: When creating/updating skills**, use the `create-skill` skill for proper structure and conventions
+## Overview
 
-The `spec-test-driven-development` skill uses:
-- `specification` skill for writing specifications
-- `test-driven-development` skill for writing tests
-  - `refactor` skill for detailed refactoring guidance during the REFACTOR phase
-  - /{PROGRAMMING_LANGUAGE}.md files for language specific guidance
-- `write-commit-message` skill for writing commit messages
-- `install-dependencies` skill for managing dependencies
-- `evaluation` skill for creating and managing evaluations
+This repository contains reusable skills for software development workflows using specification-driven and test-driven development practices.
+
+## Skills
+
+Development workflow skills are available to guide common tasks:
+
+- **`spec-test-driven-development`**: Use when implementing new features or functionality. Provides complete workflow from specification through testing to implementation.
+
+- **`specification`**: Use when writing or updating spec.md files. Defines requirement format, user story structure, and scenario patterns.
+
+- **`test-driven-development`**: Use when writing tests or implementing code. Defines RED-GREEN-REFACTOR cycle and test execution workflow. Includes language-specific guidance in PYTHON.md, RUST.md files.
+
+- **`refactor`**: Use during REFACTOR phase of TDD or when code duplication is suspected. Defines search-first workflow and safe refactoring practices.
+
+- **`write-commit-message`**: Use when creating git commits. Defines conventional commit format and message structure guidelines.
+
+- **`install-dependencies`**: Use when adding project dependencies. Defines dependency management rules and language-specific patterns for Python, Rust, and TypeScript.
+
+- **`evaluation`**: Use when creating or updating agent evaluation suites. Defines eval structure, rubrics, and validation patterns.
+
+- **`create-skill`**: Use when creating or modifying skills. Defines skill file structure, naming conventions, and integration patterns.
