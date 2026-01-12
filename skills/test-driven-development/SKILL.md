@@ -244,7 +244,7 @@ Follow project conventions for test names:
 Each test should have:
 - Clear name describing behavior
 - Documentation linking to spec requirement
-- Arrange-Act-Assert structure (or Given-When-Then)
+- Given-When-Then structure
 
 ## Integration with STDD Workflow
 

@@ -37,9 +37,9 @@ Follow this pattern:
 ```python
 def test_should_{expected_behavior}(self) -> None:
     """REQ-XXX-NNN: Requirement description"""
-    # Arrange
-    # Act
-    # Assert - ONE assertion only
+    # Given
+    # When
+    # Then - ONE assertion only
 ```
 
 **CRITICAL: One Assert Per Test**

@@ -111,11 +111,11 @@ Follow this pattern:
 fn test_should_{expected_behavior}() {
     // REQ-XXX-NNN
 
-    // Arrange
+    // Given
 
-    // Act
+    // When
 
-    // Assert - ONE assertion only
+    // Then - ONE assertion only
 }
 ```
 
@@ -125,8 +125,8 @@ fn test_should_{expected_behavior}() {
 - DO NOT include the full requirement description
 - The requirement ID is sufficient to link to SPEC.md
 
-**Arrange/Act/Assert Comments:**
-- Use simple comments: `// Arrange`, `// Act`, `// Assert`
+**Given/When/Then Comments:**
+- Use simple comments: `// Given`, `// When`, `// Then`
 - DO NOT add extra details or descriptions after these labels
 - The code itself should be self-documenting
 
@@ -239,13 +239,13 @@ mod tests {
     fn test_should_validate_input() {
         // REQ-XXX-001
 
-        // Arrange
+        // Given
         let input = vec!["test".to_string()];
 
-        // Act
+        // When
         let result = Model::new(input);
 
-        // Assert
+        // Then
         assert!(result.is_err());
     }
 }
