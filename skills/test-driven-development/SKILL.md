@@ -5,7 +5,7 @@ description: Use when writing tests or implementing code. Defines RED-GREEN-REFA
 
 # Test-Driven Development (TDD) Skill
 
-This skill defines the proper TDD workflow: write ONE test, run it (RED), implement minimal code (GREEN), run ALL tests, repeat.
+This skill defines the proper TDD workflow: write test(s), run them (RED), implement minimal code (GREEN), run ALL tests (VERIFY), repeat.
 
 **Language-specific details**:
 - For Python projects: See `test-driven-development/PYTHON.md` for pytest patterns, running tests, and Python-specific examples
@@ -13,39 +13,51 @@ This skill defines the proper TDD workflow: write ONE test, run it (RED), implem
 
 ## TDD Cycle: RED → GREEN → REFACTOR
 
-### 1. RED: Write ONE Failing Test
+### How Many Tests to Write at Once?
 
-Write a SINGLE test that fails.
+**Write ONE test at a time when:**
+- Design is uncertain or exploratory
+- Domain is complex and unfamiliar
+- You need to review and course correct after each step
+- Implementation approach is unclear
 
-**Key principle**: The test must fail for the right reason (missing implementation, not syntax error).
+**Write MULTIPLE tests upfront when:**
+- Requirements are clear and well-understood
+- Domain is familiar
+- Design is straightforward
+- You're confident in the implementation approach
 
-**CRITICAL - Run the test - it MUST fail:**
-- ❌ DO NOT write implementation before running the test
+### 1. RED: Write Failing Test(s)
+
+Write test(s) that fail.
+
+**Key principle**: Each test must fail for the right reason (missing implementation, not syntax error).
+
+**CRITICAL - Run the tests - they MUST fail:**
+- ❌ DO NOT write implementation before running the tests
 - ❌ DO NOT skip the RED phase
-- ✅ DO run the test immediately after writing it
-- Run only the new test in isolation
-- Verify it fails with expected error (import error, assertion failure, etc.)
-- Expected outcome: RED (test fails)
+- ✅ DO run the tests to verify they fail
+- Verify they fail with expected error (import error, assertion failure, etc.)
+- Expected outcome: RED (tests fail)
 
 **Why RED is mandatory:**
-- Confirms the test actually tests something
+- Confirms the tests actually test something
 - Prevents false positives (tests that always pass)
 - Validates test setup is correct
 
 ### 2. GREEN: Write Minimal Implementation
 
-Write the MINIMUM code to make the test pass.
+Write the MINIMUM code to make the tests pass.
 
 **Key principle**: Don't add features not yet tested. Don't over-engineer.
 
-**Run the SAME test again:**
-- Run only the new test in isolation
-- Verify it now passes
-- Expected outcome: GREEN (test passes)
+**Run the tests again:**
+- Run the tests to verify they now pass
+- Expected outcome: GREEN (tests pass)
 
 ### 3. VERIFY: Run ALL Tests
 
-**CRITICAL**: After each test passes, run ALL tests to ensure nothing broke.
+**CRITICAL**: After tests pass, run ALL tests to ensure nothing broke.
 
 **Key principle**: Never break existing functionality.
 
@@ -76,19 +88,15 @@ After tests pass, consider refactoring to improve code quality.
 
 **Note**: Refactoring is optional on each cycle. You can skip if code is already clean.
 
-### 5. REPEAT: Next Test
+### 5. REPEAT: Continue
 
-Only after all tests pass, write the NEXT single test and repeat the cycle.
+After all tests pass, continue with next requirements and repeat the cycle.
 
 ## TDD Rules
 
-### Rule 1: One Test at a Time
-- ❌ Do NOT write multiple tests before implementing
-- ❌ Do NOT write all tests upfront
-- ❌ Do NOT write multiple tests in a single file edit
-- ✅ DO write ONE test → run it → see result → update spec → next test
-- ✅ Write exactly one test function, then stop
-- ✅ After test passes, update SPEC.md to mark requirement as tested
+### Rule 1: Update Spec as You Go
+- ✅ DO update SPEC.md to mark requirements as tested after tests pass
+- ✅ Keep spec in sync with implementation progress
 
 **Updating SPEC.md markers:**
 - After writing unit test that passes: `[O][O]` → `[U][O]` (test exists, code pending)
@@ -98,22 +106,17 @@ Only after all tests pass, write the NEXT single test and repeat the cycle.
 - When acceptance test passes, mark related unit-tested features as implemented: `[U][O]` → `[U][X]`
 
 ### Rule 2: Always Run Tests
-**CRITICAL**: Every test MUST go through THREE runs:
-1. **RED**: Run new test **in isolation** to see it FAIL (before implementing)
-2. **GREEN**: Run same test **in isolation** to see it PASS (after implementing)
+**CRITICAL**: Tests MUST go through the RED → GREEN → VERIFY cycle:
+1. **RED**: Run tests to see them FAIL (before implementing)
+2. **GREEN**: Run tests to see them PASS (after implementing)
 3. **VERIFY**: Run **ALL tests** in the project to verify nothing broke
 
-❌ **NEVER skip the RED phase** - Always see the test fail before implementing
+❌ **NEVER skip the RED phase** - Always see tests fail before implementing
 
-**Why run in isolation first?**
-- Faster feedback loop
-- Confirms the specific test behavior
-- Clear signal that implementation fixed the exact test
-
-**Why run all tests after?**
-- Ensures no regression in existing functionality
-- Catches unintended side effects
-- Maintains confidence in full codebase
+**Why this matters:**
+- RED phase confirms tests actually test something (prevents false positives)
+- GREEN phase confirms implementation works
+- VERIFY phase ensures no regression in existing functionality
 
 ### Rule 3: Minimal Implementation
 - Write ONLY enough code to make the current test pass
@@ -130,24 +133,24 @@ Only after all tests pass, write the NEXT single test and repeat the cycle.
 ### Rule 5: Fail Fast
 If all tests don't pass:
 - Stop immediately
-- Fix the broken test
-- Don't move to next test until all tests GREEN
+- Fix the broken tests
+- Don't continue until all tests GREEN
 
 ## TDD Workflow Diagram
 
 ```
 ┌─────────────────────────────────────────────────┐
-│ Start: Pick next requirement from spec         │
+│ Start: Pick requirements from spec             │
 └────────────────┬────────────────────────────────┘
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 1. RED: Write ONE test for requirement         │
+│ 1. RED: Write test(s) for requirement(s)       │
 └────────────────┬────────────────────────────────┘
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 2. Run test in isolation                       │
+│ 2. Run tests                                   │
 │    Expected: FAIL (RED)                        │
 └────────────────┬────────────────────────────────┘
                  │
@@ -158,7 +161,7 @@ If all tests don't pass:
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 4. Run same test in isolation                  │
+│ 4. Run tests                                   │
 │    Expected: PASS (GREEN)                      │
 └────────────────┬────────────────────────────────┘
                  │
@@ -174,7 +177,7 @@ If all tests don't pass:
                  │
                  ▼
 ┌─────────────────────────────────────────────────┐
-│ 6. REFACTOR: Improve code          │
+│ 6. REFACTOR: Improve code                      │
 │    Run ALL tests after each change             │
 └────────────────┬────────────────────────────────┘
                  │
@@ -257,27 +260,10 @@ TDD is **STEP 2** of the spec-test-driven development workflow:
 When writing tests:
 1. Reference spec requirements in test documentation
 2. Follow test organization from spec sections
-3. Write tests in order of requirements
-4. One test per requirement (sometimes multiple tests if complex)
+3. Write tests for requirements from the spec
+4. Decide whether to write one test at a time or multiple tests based on complexity and certainty (see "How Many Tests to Write at Once?" above)
 
 ## Common Mistakes to Avoid
-
-### ❌ Writing Multiple Tests Before Implementing
-**Wrong:**
-```
-Write test_1
-Write test_2
-Write test_3
-Implement all features
-Run all tests
-```
-
-**Correct:**
-```
-Write test_1 → Run (RED) → Implement → Run (GREEN) → Verify all tests
-Write test_2 → Run (RED) → Implement → Run (GREEN) → Verify all tests
-Write test_3 → Run (RED) → Implement → Run (GREEN) → Verify all tests
-```
 
 ### ❌ Not Running Tests Enough
 - Skipping the RED phase (not verifying test fails)
@@ -294,23 +280,23 @@ Write test_3 → Run (RED) → Implement → Run (GREEN) → Verify all tests
 - Tests with multiple assertions (unless intrinsically coupled)
 - Tests that don't clearly document what they're testing
 
-## Checklist Before Moving to Next Test
+## Checklist Before Moving Forward
 
-Use this checklist for EVERY test **in this exact order**:
+Use this checklist for your TDD workflow **in this exact order**:
 
-1. [ ] Test written with clear name and documentation
-2. [ ] Test references specific requirement from spec
-3. [ ] **Test run in isolation and FAILED (RED)** ✓ ← DO NOT SKIP THIS
+1. [ ] Tests written with clear names and documentation
+2. [ ] Tests reference specific requirements from spec
+3. [ ] **Tests run and FAILED (RED)** ✓ ← DO NOT SKIP THIS
 4. [ ] Minimal implementation written (ONLY after seeing RED)
-5. [ ] Test run in isolation and PASSED (GREEN) ✓
+5. [ ] Tests run and PASSED (GREEN) ✓
 6. [ ] ALL tests run and PASSED (VERIFY) ✓
-7. [ ] **SPEC.md updated with test marker** ([U][O] or [A][O]) ✓
-8. [ ] **SPEC.md updated with implementation marker** ([U][X] or [A][X]) if code complete ✓
+7. [ ] **SPEC.md updated with test markers** ([U][O] or [A][O]) ✓
+8. [ ] **SPEC.md updated with implementation markers** ([U][X] or [A][X]) if code complete ✓
 9. [ ] Code refactored if needed (optional)
 10. [ ] ALL tests still pass after refactoring
 11. [ ] No broken tests
-12. [ ] Ready for next test
+12. [ ] Ready to continue
 
 **Critical reminder:** Steps 3-6 MUST happen in order:
-- RED (test fails) → then implement → GREEN (test passes) → then VERIFY (all tests pass)
+- RED (tests fail) → then implement → GREEN (tests pass) → then VERIFY (all tests pass)
 
