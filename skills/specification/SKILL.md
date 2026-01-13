@@ -48,8 +48,7 @@ Format: `[IS-TEST-IMPLEMENTED][IS-CODE-IMPLEMENTED] IDENTIFIER: example case`
 - O = not yet implemented
 ```
 
-### 3. Organized Requirements
-Group requirements into logical sections:
+### 3. Requirements
 
 **Requirement format:**
 ```markdown
