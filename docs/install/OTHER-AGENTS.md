@@ -39,15 +39,7 @@ If your ATUI uses a different config file name (e.g., GEMINI.md):
 ln -s .<atui-name>/AGENTS.md <YOUR-CONFIG-FILE>.md
 ```
 
-## Update
-
-```bash
-cd .<atui-name>
-git pull origin main
-cd ..
-git add .<atui-name>
-git commit -m "chore: update stdd-agents submodule"
-```
+See [Update Instructions](../update/OTHER-AGENTS.md) for how to update STDD Agents.
 
 ## Next Steps
 

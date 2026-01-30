@@ -20,12 +20,4 @@ git submodule update --init --recursive
 ln -s .goose/AGENTS.md AGENTS.md
 ```
 
-## Update
-
-```bash
-cd .goose
-git pull origin main
-cd ..
-git add .goose
-git commit -m "chore: update stdd-agents submodule"
-```
+See [Update Instructions](../update/GOOSE.md) for how to update STDD Agents.

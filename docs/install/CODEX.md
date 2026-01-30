@@ -20,12 +20,4 @@ git submodule update --init --recursive
 ln -s .codex/AGENTS.md AGENTS.md
 ```
 
-## Update
-
-```bash
-cd .codex
-git pull origin main
-cd ..
-git add .codex
-git commit -m "chore: update stdd-agents submodule"
-```
+See [Update Instructions](../update/CODEX.md) for how to update STDD Agents.

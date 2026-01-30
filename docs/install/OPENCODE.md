@@ -20,12 +20,4 @@ git submodule update --init --recursive
 ln -s .opencode/AGENTS.md AGENTS.md
 ```
 
-## Update
-
-```bash
-cd .opencode
-git pull origin main
-cd ..
-git add .opencode
-git commit -m "chore: update stdd-agents submodule"
-```
+See [Update Instructions](../update/OPENCODE.md) for how to update STDD Agents.

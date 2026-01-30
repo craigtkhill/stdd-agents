@@ -20,14 +20,4 @@ git submodule update --init --recursive
 ln -s .gemini/AGENTS.md GEMINI.md
 ```
 
-Gemini CLI will read the skills index from the GEMINI.md symlink.
-
-## Update
-
-```bash
-cd .gemini
-git pull origin main
-cd ..
-git add .gemini
-git commit -m "chore: update stdd-agents submodule"
-```
+See [Update Instructions](../update/GEMINI.md) for how to update STDD Agents.

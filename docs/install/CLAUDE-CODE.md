@@ -20,12 +20,4 @@ git submodule update --init --recursive
 ln -s .claude/AGENTS.md CLAUDE.md
 ```
 
-## Update
-
-```bash
-cd .claude
-git pull origin main
-cd ..
-git add .claude
-git commit -m "chore: update stdd-agents submodule"
-```
+See [Update Instructions](../update/CLAUDE-CODE.md) for how to update STDD Agents.
