@@ -1,5 +1,12 @@
 # Claude Code Setup
 
+Run all commands from your **project root**.
+
+This setup will:
+1. Clone STDD Agents to `.claude/` directory, creating `.claude/AGENTS.md`
+2. Create a symlink `CLAUDE.md` in the project root pointing to `.claude/AGENTS.md`
+3. Claude Code will read `CLAUDE.md` and access the skills index
+
 ## Installation
 
 ```bash
@@ -9,8 +16,8 @@ git submodule add https://github.com/craigtkhill/stdd-agents.git .claude
 # Initialize the submodule
 git submodule update --init --recursive
 
-# Create symlink for Claude Code
-ln -s .claude/AGENTS.md .claude/CLAUDE.md
+# Create symlink to submodule's AGENTS.md for Claude Code (from project root)
+ln -s .claude/AGENTS.md CLAUDE.md
 ```
 
 ## Update

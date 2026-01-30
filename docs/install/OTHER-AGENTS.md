@@ -24,8 +24,8 @@ Different ATUIs discover skills in different ways:
 If your ATUI reads from `AGENTS.md` or a specific config file:
 
 ```bash
-# Create a symlink from the ATUI's config file to AGENTS.md
-ln -s .<atui-name>/AGENTS.md .<atui-name>/<CONFIG-FILE>.md
+# Create a symlink in project root to the submodule's AGENTS.md
+ln -s .<atui-name>/AGENTS.md <CONFIG-FILE>.md
 ```
 
 ### Directory scanning (OpenCode, Goose)
@@ -35,8 +35,8 @@ If your ATUI automatically scans subdirectories for skills, the submodule at `.<
 If your ATUI uses a different config file name (e.g., GEMINI.md):
 
 ```bash
-# Symlink to the appropriate file name
-ln -s .<atui-name>/AGENTS.md .<atui-name>/<YOUR-CONFIG-FILE>.md
+# Create a symlink in project root to the submodule's AGENTS.md
+ln -s .<atui-name>/AGENTS.md <YOUR-CONFIG-FILE>.md
 ```
 
 ## Update

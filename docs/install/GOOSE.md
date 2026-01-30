@@ -1,5 +1,12 @@
 # Goose Setup
 
+Run all commands from your **project root**.
+
+This setup will:
+1. Clone STDD Agents to `.goose/` directory, creating `.goose/AGENTS.md`
+2. Create a symlink `AGENTS.md` in the project root pointing to `.goose/AGENTS.md`
+3. Goose will read `AGENTS.md` and access the skills index
+
 ## Installation
 
 ```bash
@@ -8,22 +15,10 @@ git submodule add https://github.com/craigtkhill/stdd-agents.git .goose
 
 # Initialize the submodule
 git submodule update --init --recursive
+
+# Create symlink to submodule's AGENTS.md for Goose (from project root)
+ln -s .goose/AGENTS.md AGENTS.md
 ```
-
-Goose uses YAML recipe files for configuration. You can reference skills from the STDD Agents directory in your recipes.
-
-## Example Recipe
-
-Create a `.goose/recipe.yaml` file:
-
-```yaml
-steps:
-  - name: Run tests with TDD workflow
-    description: Use STDD Agents test-driven-development skill
-    # Reference the skill from the submodule
-```
-
-For more information on creating Goose recipes, see the [Goose documentation](https://block.github.io/goose/docs/).
 
 ## Update
 
