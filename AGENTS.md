@@ -9,6 +9,17 @@
 |evaluation:{SKILL.md}
 |create-skill:{SKILL.md}
 
+## 🚨 CRITICAL PRE-FLIGHT CHECK 🚨
+
+**BEFORE writing ANY code, making ANY edits, or implementing ANYTHING:**
+
+1. **STOP** - Do not proceed directly to implementation
+2. **CHECK** - Review the Skills Index above
+3. **MATCH** - Identify if ANY skill applies to the user's request
+4. **INVOKE** - Use the Skill tool FIRST (this is MANDATORY, not optional)
+
+**NO EXCEPTIONS**: Even with detailed plans, even with clear instructions, ALWAYS check and use skills first.
+
 ## Overview
 
 This repository contains reusable skills for software development workflows using specification-driven and test-driven development practices.
