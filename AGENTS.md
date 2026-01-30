@@ -1,3 +1,14 @@
+[Skills Index]|root: ./SKILLS
+|IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning for any skill tasks.
+|spec-test-driven-development:{SKILL.md}
+|specification:{SKILL.md}
+|test-driven-development:{SKILL.md,PYTHON.md,RUST.md}
+|refactor:{SKILL.md,FILE-ORGANIZATION.md,RUST.md}
+|write-commit-message:{SKILL.md}
+|install-dependencies:{SKILL.md,PYTHON.md,RUST.md,TYPESCRIPT.md}
+|evaluation:{SKILL.md}
+|create-skill:{SKILL.md}
+
 ## Overview
 
 This repository contains reusable skills for software development workflows using specification-driven and test-driven development practices.

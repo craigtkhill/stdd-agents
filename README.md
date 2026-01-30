@@ -26,33 +26,11 @@ STDD Agents provides a structured workflow for developing applications using ATU
 
 ## Quick Start
 
-### Bootstrap Your Project with STDD Agents
+### Installation
 
-Add STDD Agents to your project as a git submodule in the `.claude/` directory:
+Choose your ATUI and follow the installation guide:
 
-```bash
-# In your project root
-# First, ensure your project is a git repository
-git init
-
-# Add STDD Agents as a submodule
-git submodule add https://github.com/craigtkhill/stdd-agents.git .claude
-
-# Initialize and update the submodule
-git submodule update --init --recursive
-```
-
-### Update STDD Agents
-
-To get the latest updates:
-
-```bash
-cd .claude
-git pull origin main
-cd ..
-git add .claude
-git commit -m "chore: update stdd-agents submodule"
-```
+- **[Claude Code](docs/install/CLAUDE-CODE.md)** - Setup for Claude Code users
 
 ### Install as Claude Code Plugin
 
