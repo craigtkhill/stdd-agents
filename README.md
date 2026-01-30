@@ -31,6 +31,9 @@ STDD Agents provides a structured workflow for developing applications using ATU
 Choose your ATUI and follow the installation guide:
 
 - **[Claude Code](docs/install/CLAUDE-CODE.md)** - Setup for Claude Code users
+- **[Codex](docs/install/CODEX.md)** - Setup for Codex users
+- **[OpenCode](docs/install/OPENCODE.md)** - Setup for OpenCode users
+- **[Gemini CLI](docs/install/GEMINI.md)** - Setup for Gemini CLI users
 
 ### Install as Claude Code Plugin
 
