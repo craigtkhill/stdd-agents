@@ -35,7 +35,7 @@ Choose your ATUI and follow the installation guide:
 - **[OpenCode](docs/install/OPENCODE.md)** - Setup for OpenCode users
 - **[Gemini CLI](docs/install/GEMINI.md)** - Setup for Gemini CLI users
 - **[Goose](docs/install/GOOSE.md)** - Setup for Goose users
-- **[Generic](docs/install/GENERIC.md)** - Setup for other ATUIs
+- **[Other Agents](docs/install/OTHER-AGENTS.md)** - Setup for other ATUIs
 
 ### Install as Claude Code Plugin
 
