@@ -50,6 +50,8 @@ Format: `[IS-TEST-IMPLEMENTED][IS-CODE-IMPLEMENTED] IDENTIFIER: example case`
 
 ### 3. Requirements
 
+**Requirements are a flat list — do NOT add sub-headings to group them.** Grouping by category creates artificial structure that encourages duplication and makes it harder to maintain sequential numbering.
+
 **Requirement format:**
 ```markdown
 - [O][O] REQ-XXX-001: {Specific, testable requirement}
