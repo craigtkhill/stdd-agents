@@ -75,10 +75,16 @@ Format: `[IS-TEST-IMPLEMENTED][IS-CODE-IMPLEMENTED] IDENTIFIER: example case`
 - Each requirement should be stated ONLY ONCE in the spec
 - DO NOT create separate requirements for implementation details
 
+**CRITICAL - Do Not Duplicate Existing Functionality:**
+- Before writing any requirement, check whether the behavior is already implemented and tested in an existing module
+- If the feature reuses existing infrastructure do NOT add requirements for that infrastructure
+- Only specify behavior that is NEW to this feature
+
 **Before adding a requirement, ask:**
 1. Is this something the user directly experiences or cares about?
 2. Have I already stated this requirement elsewhere in the spec or in another spec file?
 3. Is this describing WHAT the system does for the user, or HOW it does it internally?
+4. Is this behavior already implemented and tested in an existing module that this feature will reuse?
 
 ### 4. Scenarios
 
