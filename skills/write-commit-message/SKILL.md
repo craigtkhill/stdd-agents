@@ -13,22 +13,9 @@ Use the conventional commits style:
 
 ```
 <type>[optional scope]: <description>
-
-[optional body]
-
-[optional footer(s)]
 ```
 
-### Full Format with All Options
-
-```
-<type>[optional scope]!: <description>
-
-[optional body]
-
-[optional footer: value]
-[optional footer: value]
-```
+**CRITICAL: Single-line only. Never add a body or footer.** The code and spec speak for themselves.
 
 ### Commit Types
 
@@ -59,40 +46,11 @@ Indicate breaking changes with `!` after type/scope:
 - Keep under 72 characters
 - Be specific and descriptive
 
-## Simple One-Line Commits
+## No Body, No Footer
 
-**ALWAYS prefer simple, single-line commits.**
+**Never add a commit body or footer.** Every commit must be a single line only.
 
-**DO NOT add a body unless absolutely necessary.** Most commits should be a single line.
-
-## When to Use Multi-line Commits (Rarely)
-
-Only use a body when the commit requires significant explanation that cannot fit in the description:
-
-- Breaking changes that need migration instructions
-- Complex architectural decisions that need justification
-- Changes affecting multiple systems that need explanation
-
-The code speaks for itself. Commit messages should be concise.
-
-## Footers
-
-Footers provide metadata about the commit.
-
-### Breaking Changes
-
-Document breaking changes in footer:
-
-## Commit Message Customization
-
-**IMPORTANT**: Do NOT include AI attribution footers like:
-
-```
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
-
-Keep commit messages clean and focused on the changes themselves.
+Do NOT include AI attribution, co-authored-by lines, or any other footers.
 
 ## Before Committing
 
@@ -116,4 +74,4 @@ When following the spec-test-driven development workflow:
 2. Ensure all tests pass
 3. Run any precommit hooks
 3. Commit with descriptive message
-4. Reference requirement ID in commit body if helpful
+4. Keep the commit message to a single line
