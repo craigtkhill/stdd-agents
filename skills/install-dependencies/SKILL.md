@@ -7,45 +7,38 @@ description: Use when adding project dependencies. Defines dependency management
 
 ## Philosophy
 
-**Core Principle**: Let package managers handle version resolution automatically. Never specify version numbers unless absolutely necessary.
+**Core Principle**: Let package managers resolve versions, then pin the exact version they resolved to in the dependency file. This gives you fully reproducible builds.
 
 ## Why This Approach
 
 1. **Package managers are smarter**: Modern package managers (uv, npm, cargo) resolve compatible versions automatically
-2. **Avoid version conflicts**: Manual version specifications often create dependency hell
-3. **Get latest features**: Always use the newest compatible versions
-4. **Simpler maintenance**: No need to manually track and update versions
-5. **Trust the ecosystem**: Package managers understand semver and compatibility better than manual pinning
+2. **Pinning after resolution**: Recording the exact resolved version ensures builds are reproducible even without a lock file
+3. **Explicit updates**: Dependencies only change when you actively choose to update them
+4. **No surprises**: A fresh install always gets exactly what was tested
 
 ## Universal Rules
 
 ### ✅ DO:
-- Add dependency names without version numbers
-- Let the package manager resolve versions
-- Trust the lock file (package-lock.json, Cargo.lock, uv.lock)
-- Update dependencies regularly through the package manager
+- Add the dependency name without a version to the dependency file
+- Run the package manager to resolve and install
+- Read the resolved version from the install output or lock file
+- Update the dependency file to pin the exact resolved version
+- Keep dependencies in alphabetical order
+- Commit both the dependency file and the lock file
 
 ### ❌ DON'T:
-- Specify version numbers (>=, ^, ~, =)
-- Manually pin versions without good reason
-- Override package manager decisions
-- Commit version specifications to dependency files
+- Guess version numbers before running the resolver
+- Use loose ranges (`>=`, `~=`, `^`) — pin exactly what was resolved
+- Skip the resolution step and manually look up versions
 
-## Exception Case
+## Workflow
 
-The ONLY time to specify a version is when there's a **known breaking change** or **compatibility issue** that requires pinning to a specific version.
-
-**Requirements for version pinning:**
-- Must be documented with a comment explaining why
-- Must be treated as temporary until the issue is resolved
-- Should include link to issue/ticket tracking the problem
-
-**Example:**
-```toml
-dependencies = [
-    "problematic-lib",  # Pinned to v1.2.3 due to breaking change in v1.3.0 (see issue #123)
-]
-```
+1. **Add dependency name** (no version) to the dependency file
+2. **Run the package manager** to resolve and install
+3. **Read the resolved version** from the install output
+4. **Update the dependency file** with the exact resolved version
+5. **Verify**: Run the package manager again to confirm everything is consistent
+6. **Commit**: Both the dependency file and the lock file
 
 ## Language-Specific Details
 
@@ -53,10 +46,3 @@ For language-specific syntax and examples:
 - Python: See [PYTHON.md](PYTHON.md)
 - TypeScript/JavaScript: See [TYPESCRIPT.md](TYPESCRIPT.md)
 - Rust: See [RUST.md](RUST.md)
-
-## Workflow
-
-1. **Add dependency**: Add dependency name only (no version)
-2. **Let package manager resolve**: Run the appropriate install/sync command
-3. **Verify**: Check that dependency was resolved and installed
-4. **Commit lock file**: Always commit the updated lock file

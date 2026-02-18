@@ -7,47 +7,61 @@ Python dependencies are declared in `pyproject.toml`:
 ```toml
 [project]
 dependencies = [
-    "package-name",
+    "package-name==1.2.3",
 ]
 ```
 
-## ❌ WRONG - Do NOT specify versions:
+## Workflow Example
 
+### Step 1: Add dependency name without version, then resolve:
 ```toml
 dependencies = [
-    "pydantic>=2.0",                      # ❌ NO!
-    "requests~=2.31.0",                   # ❌ NO!
+    "requests",
 ]
 ```
 
-## ✅ CORRECT - Omit versions entirely:
+```bash
+uv sync
+```
 
+### Step 2: Read the resolved version from the install output:
+```
+Installed 1 package in 50ms
+ + requests==2.32.3
+```
+
+### Step 3: Pin the exact version in pyproject.toml:
 ```toml
 dependencies = [
-    "pydantic",                  # ✅ YES!
-    "requests",                  # ✅ YES!
+    "requests==2.32.3",
 ]
+```
+
+### Step 4: Verify:
+```bash
+uv sync
 ```
 
 ## Package Manager Commands
 
 This project uses **uv** for Python dependency management:
 
-### Add a dependency:
+### Install/sync project:
 ```bash
-# Just add the name to pyproject.toml dependencies list, then:
 uv sync
 ```
 
-### Update dependencies:
+### Update a specific dependency:
+```bash
+uv sync --upgrade-package package-name
+```
+Then update the pinned version in `pyproject.toml` to match.
+
+### Update all dependencies:
 ```bash
 uv sync --upgrade
 ```
-
-### Install project:
-```bash
-uv sync
-```
+Then update all pinned versions in `pyproject.toml` to match.
 
 ## Lock File
 
@@ -59,11 +73,8 @@ Keep dependencies in alphabetical order for easier management:
 
 ```toml
 dependencies = [
-    "boto3",
-    "logfire",
-    "mlflow",
-    "pydantic",
-    "pydantic-ai",
-    "python-dotenv",
+    "boto3==1.40.20",
+    "logfire==3.1.0",
+    "pydantic==2.11.4",
 ]
 ```
