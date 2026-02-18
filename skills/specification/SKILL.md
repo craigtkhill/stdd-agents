@@ -77,6 +77,12 @@ Format: `[IS-TEST-IMPLEMENTED][IS-CODE-IMPLEMENTED] IDENTIFIER: example case`
 - Each requirement should be stated ONLY ONCE in the spec
 - DO NOT create separate requirements for implementation details
 
+**CRITICAL - No Implementation Details in Requirements:**
+- Requirements must describe WHAT the system does, never HOW it does it
+- DO NOT name specific libraries, frameworks, or tools in requirements
+- Library/tool choices belong in the Possible Solutions section, not in requirements
+- A requirement should remain valid even if the underlying implementation is swapped
+
 **CRITICAL - Do Not Duplicate Existing Functionality:**
 - Before writing any requirement, check whether the behavior is already implemented and tested in an existing module
 - If the feature reuses existing infrastructure do NOT add requirements for that infrastructure
