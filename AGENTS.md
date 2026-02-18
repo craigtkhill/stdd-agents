@@ -6,6 +6,7 @@
 |refactor:{SKILL.md,FILE-ORGANIZATION.md,RUST.md}
 |write-commit-message:{SKILL.md}
 |install-dependencies:{SKILL.md,PYTHON.md,RUST.md,TYPESCRIPT.md}
+|update-dependencies:{SKILL.md,PYTHON.md}
 |evaluation:{SKILL.md}
 |create-skill:{SKILL.md}
 
@@ -39,6 +40,8 @@ Development workflow skills are available to guide common tasks:
 - **`write-commit-message`**: Use when creating git commits. Defines conventional commit format and message structure guidelines.
 
 - **`install-dependencies`**: Use when adding project dependencies. Defines dependency management rules and language-specific patterns for Python, Rust, and TypeScript.
+
+- **`update-dependencies`**: Use when updating existing pinned dependencies. Defines unpin-resolve-repin workflow with test verification and rollback on failure.
 
 - **`evaluation`**: Use when creating or updating agent evaluation suites. Defines eval structure, rubrics, and validation patterns.
 
