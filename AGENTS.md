@@ -2,6 +2,7 @@
 |IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning for any skill tasks.
 |spec-test-driven-development:{SKILL.md}
 |specification:{SKILL.md}
+|acceptance-test:{SKILL.md}
 |test-driven-development:{SKILL.md,PYTHON.md,RUST.md}
 |refactor:{SKILL.md,FILE-ORGANIZATION.md,RUST.md}
 |write-commit-message:{SKILL.md}
@@ -31,7 +32,9 @@ Development workflow skills are available to guide common tasks:
 
 - **`spec-test-driven-development`**: Use when implementing new features or functionality. Provides complete workflow from specification through testing to implementation.
 
-- **`specification`**: Use when writing or updating spec.md files. Defines requirement format, user story structure, and scenario patterns.
+- **`specification`**: Use when writing or updating spec.yaml files. Defines requirement format and user story structure.
+
+- **`acceptance-test`**: Use when writing acceptance tests or adding scenarios to spec.yaml. Defines Given/When/Then format and acceptance test patterns.
 
 - **`test-driven-development`**: Use when writing tests or implementing code. Defines RED-GREEN-REFACTOR cycle and test execution workflow. Includes language-specific guidance in PYTHON.md, RUST.md files.
 

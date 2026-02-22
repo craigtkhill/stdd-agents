@@ -47,7 +47,7 @@ src/
   feature/
     mod.rs          # Feature module exports
     models.rs       # Tests ABOVE implementation
-    SPEC.md
+    spec.yaml
 ```
 
 ### Integration Tests
@@ -123,7 +123,7 @@ fn test_should_{expected_behavior}() {
 - Place requirement ID as FIRST line INSIDE the test function
 - Use ONLY the requirement ID (e.g., `// REQ-XXX-NNN`)
 - DO NOT include the full requirement description
-- The requirement ID is sufficient to link to SPEC.md
+- The requirement ID is sufficient to link to spec.yaml
 
 **Given/When/Then Comments:**
 - Use simple comments: `// Given`, `// When`, `// Then`

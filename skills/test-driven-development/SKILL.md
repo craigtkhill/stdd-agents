@@ -95,15 +95,13 @@ After all tests pass, continue with next requirements and repeat the cycle.
 ## TDD Rules
 
 ### Rule 1: Update Spec as You Go
-- ✅ DO update SPEC.md to mark requirements as tested after tests pass
+- ✅ DO update spec.yaml to mark requirements as tested after tests pass
 - ✅ Keep spec in sync with implementation progress
 
-**Updating SPEC.md markers:**
-- After writing unit test that passes: `[O][O]` → `[U][O]` (test exists, code pending)
-- After code passes unit test: `[U][O]` → `[U][X]` (test and code complete)
-- After writing acceptance test that passes: `[O][O]` → `[A][O]` (acceptance test exists, code pending)
-- After code passes acceptance test: `[A][O]` → `[A][X]` (acceptance test and code complete)
-- When acceptance test passes, mark related unit-tested features as implemented: `[U][O]` → `[U][X]`
+**Updating spec.yaml markers:**
+- After writing unit test that passes: `test: O` → `test: U` (test exists, code pending)
+- After code passes unit test: `code: O` → `code: X` (test and code complete)
+- For acceptance test markers, see the `acceptance-test` skill
 
 ### Rule 2: Always Run Tests
 **CRITICAL**: Tests MUST go through the RED → GREEN → VERIFY cycle:
@@ -194,42 +192,15 @@ If all tests don't pass:
 
 ## Test Organization
 
-### Unit Tests vs Acceptance Tests vs Integration Tests
+### Unit Tests
 
-**Unit Tests:**
 - Test individual functions/classes in isolation
 - Fast, focused, and run frequently
 - Located within the feature directory
 - Should cover the vast majority of your testing needs
-- Marked with `[U]` in SPEC.md
+- Marked with `test: U` in spec.yaml
 
-**Acceptance Tests:**
-- Test complete features from a user/business perspective
-- Verify requirements are met end-to-end within a feature
-- Located within the feature directory
-- Test scenarios from the spec (Given/When/Then)
-- May involve multiple units working together within the same feature
-- Marked with `[A]` in SPEC.md
-- **When to use:**
-  - Testing complete user workflows that require external APIs
-  - Verifying business requirements are satisfied
-  - Testing features that span multiple units within the feature
-  - End-to-end validation of a feature
-
-**Integration Tests:**
-- Test interactions between multiple modules or external systems
-- Slower, more complex, expensive to maintain
-- Located in `tests/` directory at project root
-- **Use sparingly and only for tactical purposes:**
-  - When unit tests cannot adequately verify the behavior
-  - Testing interactions with external dependencies (databases, APIs, LLMs)
-  - End-to-end workflows that span multiple modules
-  - Verifying third-party library integration (e.g., Pydantic AI model introspection)
-
-**Test Hierarchy:**
-1. **Default to unit tests** - fast, isolated, cover individual behaviors
-2. **Use acceptance tests** - when you need end-to-end feature validation
-3. **Use integration tests sparingly** - only for tactical external integration needs
+**For acceptance tests and scenarios, use the `acceptance-test` skill.**
 
 ### Test Grouping
 Organize tests by requirement sections:
@@ -247,7 +218,6 @@ Follow project conventions for test names:
 Each test should have:
 - Clear name describing behavior
 - Documentation linking to spec requirement
-- Given-When-Then structure
 
 ## Integration with STDD Workflow
 
@@ -290,8 +260,8 @@ Use this checklist for your TDD workflow **in this exact order**:
 4. [ ] Minimal implementation written (ONLY after seeing RED)
 5. [ ] Tests run and PASSED (GREEN) ✓
 6. [ ] ALL tests run and PASSED (VERIFY) ✓
-7. [ ] **SPEC.md updated with test markers** ([U][O] or [A][O]) ✓
-8. [ ] **SPEC.md updated with implementation markers** ([U][X] or [A][X]) if code complete ✓
+7. [ ] **spec.yaml updated with test markers** (test: U or test: A) ✓
+8. [ ] **spec.yaml updated with implementation markers** (code: X) if code complete ✓
 9. [ ] Code refactored if needed (optional)
 10. [ ] ALL tests still pass after refactoring
 11. [ ] No broken tests

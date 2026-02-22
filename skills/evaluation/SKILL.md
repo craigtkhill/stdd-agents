@@ -13,34 +13,39 @@ Use this skill when:
 - Creating a NEW evaluation suite for a feature
 - Updating an EXISTING evaluation suite
 - Understanding the evaluation framework patterns
-- Writing spec.md, rubric.md, or evaluation files
+- Writing spec.yaml, rubric.md, or evaluation files
 
 ## Evaluation Framework Overview
 
 All evaluations in `evals/` follow a consistent structure with both **code-based** and **LLM-as-judge** validations.
 
-## spec.md Template
+## spec.yaml Template
 
-Use this template for all spec.md files:
+Use this template for all eval spec.yaml files:
 
-```markdown
-# [Feature Name] Evaluation Specification
+```yaml
+feature:
+  name: "[Feature Name] Evaluation"
+  as_a: evaluator
+  i_want: validate feature behavior
+  solutions:
+    - Ground truth validation
+    - Code-based validation
+    - LLM-as-judge validation
 
-## Requirements
-Format: `[IS-EVAL-IMPLEMENTED] IDENTIFIER: example case`
-- G = matches ground truth
-- C = implemented via code
-- L = implemented via LLM as judge using rubric
-- O = not yet implemented
-
-### [Category Name 1]
-- [G] REQ-EVAL-XX-001: Description of first code-based requirement
-- [C] REQ-EVAL-XX-002: Description of second code-based requirement
-
-### [Category Name 2]
-- [L] REQ-EVAL-XX-003: Description of LLM-judged requirement
-- [O] REQ-EVAL-XX-004: Description of LLM-judged requirement
-
+requirements:
+  - id: REQ-EVAL-XX-001
+    eval: G
+    description: Description of ground truth requirement
+  - id: REQ-EVAL-XX-002
+    eval: C
+    description: Description of code-based requirement
+  - id: REQ-EVAL-XX-003
+    eval: L
+    description: Description of LLM-judged requirement
+  - id: REQ-EVAL-XX-004
+    eval: O
+    description: Description of planned requirement
 ```
 
 **Template Rules:**
@@ -72,7 +77,7 @@ Use this template for all rubric.md files:
 ```
 
 **Template Rules:**
-- **Identifier Format**: `RUB-XX-NNN` (matches spec.md abbreviation)
+- **Identifier Format**: `RUB-XX-NNN` (matches spec.yaml abbreviation)
 - **Categories**: Organize criteria into logical groups
 - **Criteria**: Write concrete, objectively verifiable rules, not subjective assessments
 - **Specificity**: Reference actual values, fields, or behaviors that can be checked

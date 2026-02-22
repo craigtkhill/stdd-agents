@@ -9,15 +9,15 @@ When developing ANY new feature or functionality, follow this strict workflow:
 
 ## Workflow Steps
 
-### 1. Write Specification FIRST (spec.md)
+### 1. Write Specification FIRST (spec.yaml)
 **Use the `specification` skill to write specifications following project conventions.**
 
 The specification skill provides detailed guidelines for:
-- Feature user story format (As a... I want... So that...)
+- Feature user story format (as_a, i_want, solutions)
 - Requirements organization and naming (REQ-XXX-NNN)
 - Requirement writing guidelines (atomic, testable, present tense)
-- Scenario writing (Given/When/Then format)
-- Proper spec structure and sections
+- Scenario writing (given/when/then format)
+- Proper YAML spec structure
 
 After writing spec:
 - Get user approval on spec before proceeding to tests
@@ -30,19 +30,17 @@ After writing spec:
 
 **When to write unit tests vs acceptance tests:**
 - **Unit tests**: For isolated logic that doesn't require mocking
-- **Acceptance tests**: For integration logic that requires mocking repositories, external services, or complex dependencies
-- **Rule**: If a test requires mocking dependencies it should be an acceptance test instead
-- Acceptance tests validate end-to-end behavior through actual API endpoints
+- **Acceptance tests**: Use the `acceptance-test` skill for guidance on when and how to write acceptance tests
 
 ### 3. Implement Code LAST
 - Write minimal code to make tests pass
 - Follow patterns from spec
 - Reuse existing infrastructure where possible
 - Update todo list as you work
-- **CRITICAL: Update spec requirement markers as you complete each requirement**
-  - After writing test: Mark test column with `U` (unit test) or `A` (acceptance test)
-  - After implementing code: Mark code column with `X` (implemented)
-  - Example: `[O][O]` → `[U][O]` (test written) → `[U][X]` (code implemented)
+- **CRITICAL: Update spec.yaml requirement markers as you complete each requirement**
+  - After writing test: Set `test` field to `U` (unit test) or `A` (acceptance test)
+  - After implementing code: Set `code` field to `X` (implemented)
+  - Example: `test: O, code: O` → `test: U, code: O` (test written) → `test: U, code: X` (code implemented)
 
 ### 4. Run Tests to Verify Implementation
 - **CRITICAL: After completing implementation, ALWAYS run the tests**
