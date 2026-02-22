@@ -31,12 +31,12 @@ feature:
 
 requirements:
   - id: REQ-XXX-001
-    test: O
-    code: O
+    test: to-implement
+    code: to-implement
     description: Specific, testable requirement
   - id: REQ-XXX-002
-    test: O
-    code: O
+    test: to-implement
+    code: to-implement
     description: Another specific requirement
 ```
 
@@ -45,7 +45,7 @@ requirements:
 The `feature` section captures the user story and possible solutions.
 
 - `name`: Brief title for the feature
-- `as_a`: The user role (who benefits)
+- `as_a`: The end user role (always from the user's perspective, never a system component)
 - `i_want`: The goal or capability (what they want)
 - `solutions`: List of possible implementation approaches
 
@@ -58,11 +58,16 @@ The `feature` section captures the user story and possible solutions.
 
 ### Requirements Section
 
-**Status markers for `test` and `code` fields:**
-- `U` = implemented via unit test
-- `A` = implemented via acceptance test
-- `X` = implemented
-- `O` = not yet implemented
+**Status markers for `test` field:**
+- `to-implement` = not yet implemented
+- `unit` = implemented via unit test
+- `acceptance` = implemented via acceptance test
+- `wont-implement` = intentionally not tested
+
+**Status markers for `code` field:**
+- `to-implement` = not yet implemented
+- `done` = implemented
+- `wont-implement` = intentionally not implemented
 
 **Requirements are a flat list — do NOT nest or group them.** Grouping by category creates artificial structure that encourages duplication and makes it harder to maintain sequential numbering.
 

@@ -38,9 +38,9 @@ After writing spec:
 - Reuse existing infrastructure where possible
 - Update todo list as you work
 - **CRITICAL: Update spec.yaml requirement markers as you complete each requirement**
-  - After writing test: Set `test` field to `U` (unit test) or `A` (acceptance test)
-  - After implementing code: Set `code` field to `X` (implemented)
-  - Example: `test: O, code: O` → `test: U, code: O` (test written) → `test: U, code: X` (code implemented)
+  - After writing test: Set `test` field to `unit` or `acceptance`
+  - After implementing code: Set `code` field to `done`
+  - Example: `test: to-implement, code: to-implement` → `test: unit, code: to-implement` (test written) → `test: unit, code: done` (code implemented)
 
 ### 4. Run Tests to Verify Implementation
 - **CRITICAL: After completing implementation, ALWAYS run the tests**

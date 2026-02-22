@@ -99,8 +99,8 @@ After all tests pass, continue with next requirements and repeat the cycle.
 - ✅ Keep spec in sync with implementation progress
 
 **Updating spec.yaml markers:**
-- After writing unit test that passes: `test: O` → `test: U` (test exists, code pending)
-- After code passes unit test: `code: O` → `code: X` (test and code complete)
+- After writing unit test that passes: `test: to-implement` → `test: unit`
+- After code passes unit test: `code: to-implement` → `code: done`
 - For acceptance test markers, see the `acceptance-test` skill
 
 ### Rule 2: Always Run Tests
@@ -198,7 +198,7 @@ If all tests don't pass:
 - Fast, focused, and run frequently
 - Located within the feature directory
 - Should cover the vast majority of your testing needs
-- Marked with `test: U` in spec.yaml
+- Marked with `test: unit` in spec.yaml
 
 **For acceptance tests and scenarios, use the `acceptance-test` skill.**
 
@@ -260,8 +260,8 @@ Use this checklist for your TDD workflow **in this exact order**:
 4. [ ] Minimal implementation written (ONLY after seeing RED)
 5. [ ] Tests run and PASSED (GREEN) ✓
 6. [ ] ALL tests run and PASSED (VERIFY) ✓
-7. [ ] **spec.yaml updated with test markers** (test: U or test: A) ✓
-8. [ ] **spec.yaml updated with implementation markers** (code: X) if code complete ✓
+7. [ ] **spec.yaml updated with test markers** (test: unit or test: acceptance) ✓
+8. [ ] **spec.yaml updated with implementation markers** (code: done) if code complete ✓
 9. [ ] Code refactored if needed (optional)
 10. [ ] ALL tests still pass after refactoring
 11. [ ] No broken tests

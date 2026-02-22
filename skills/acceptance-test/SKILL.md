@@ -55,14 +55,14 @@ Each acceptance test should map to a scenario in spec.yaml.
 **Unit Tests:**
 - Test individual functions/classes in isolation
 - Fast, focused, and run frequently
-- Marked with `test: U` in spec.yaml
+- Marked with `test: unit` in spec.yaml
 
 **Acceptance Tests:**
 - Test complete features from a user/business perspective
 - Verify requirements are met end-to-end within a feature
 - Test scenarios from the spec (Given/When/Then)
 - May involve multiple units working together
-- Marked with `test: A` in spec.yaml
+- Marked with `test: acceptance` in spec.yaml
 
 **Integration Tests:**
 - Test interactions between multiple modules or external systems
@@ -73,6 +73,6 @@ Each acceptance test should map to a scenario in spec.yaml.
 
 ## Updating spec.yaml Markers
 
-- After writing acceptance test that passes: `test: O` → `test: A`
-- After code passes acceptance test: `code: O` → `code: X`
-- When acceptance test passes, mark related unit-tested features as implemented: `code: O` → `code: X`
+- After writing acceptance test that passes: `test: to-implement` → `test: acceptance`
+- After code passes acceptance test: `code: to-implement` → `code: done`
+- When acceptance test passes, mark related unit-tested features as implemented: `code: to-implement` → `code: done`
