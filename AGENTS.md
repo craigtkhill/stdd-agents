@@ -10,6 +10,7 @@
 |update-dependencies:{SKILL.md,PYTHON.md}
 |evaluation:{SKILL.md}
 |create-skill:{SKILL.md}
+|pre-commit-hooks:{SKILL.md}
 
 ## 🚨 CRITICAL PRE-FLIGHT CHECK 🚨
 
@@ -49,3 +50,5 @@ Development workflow skills are available to guide common tasks:
 - **`evaluation`**: Use when creating or updating agent evaluation suites. Defines eval structure, rubrics, and validation patterns.
 
 - **`create-skill`**: Use when creating or modifying skills. Defines skill file structure, naming conventions, and integration patterns.
+
+- **`pre-commit-hooks`**: Use when running pre-commit hooks manually. This project uses `prek`, not `pre-commit`. Defines correct commands for running hooks.
