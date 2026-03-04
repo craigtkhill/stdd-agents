@@ -23,8 +23,8 @@ Every spec.yaml file must follow this YAML structure:
 ```yaml
 feature:
   name: Brief Feature Title
-  as_a: user role
-  i_want: goal/capability
+  user: user role
+  goal: goal/capability
   solutions:
     - Solution 1
     - Solution 2
@@ -45,8 +45,8 @@ requirements:
 The `feature` section captures the user story and possible solutions.
 
 - `name`: Brief title for the feature
-- `as_a`: The end user role (always from the user's perspective, never a system component)
-- `i_want`: The goal or capability (what they want)
+- `user`: The end user role (always from the user's perspective, never a system component)
+- `goal`: The goal or capability (what they want)
 - `solutions`: List of possible implementation approaches
 
 **Rationale for User Goals + Possible Solutions:**
