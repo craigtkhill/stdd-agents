@@ -249,6 +249,7 @@ When writing tests:
 - Tests that don't fail when they should
 - Tests with multiple assertions (unless intrinsically coupled)
 - Tests that don't clearly document what they're testing
+- Using mocks — always use real implementations instead of mocks
 
 ## Checklist Before Moving Forward
 
