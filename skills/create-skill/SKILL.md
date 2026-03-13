@@ -136,7 +136,7 @@ When creating a new skill:
 Skills can reference other skills:
 
 ```markdown
-**Use the `specification` skill for writing specifications.**
+**Use the `specifying-requirements` skill for writing specifications.**
 **Use the `test-driven-development` skill for writing tests.**
 ```
 

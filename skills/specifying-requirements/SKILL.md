@@ -1,5 +1,5 @@
 ---
-name: specification
+name: specifying-requirements
 description: Use when writing or updating spec.yaml files. Defines requirement format and user story structure.
 ---
 

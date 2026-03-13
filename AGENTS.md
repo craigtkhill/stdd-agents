@@ -1,7 +1,7 @@
 [Skills Index]|roots: .claude/skills,.codex/skills,.opencode/skills,.gemini/skills,.goose/skills
 |IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning for any skill tasks.
 |spec-test-driven-development:{SKILL.md}
-|specification:{SKILL.md}
+|specifying-requirements:{SKILL.md}
 |acceptance-test:{SKILL.md}
 |test-driven-development:{SKILL.md,PYTHON.md,RUST.md}
 |refactoring-code:{SKILL.md,FILE-ORGANIZATION.md,RUST.md}
@@ -33,7 +33,7 @@ Development workflow skills are available to guide common tasks:
 
 - **`spec-test-driven-development`**: Use when implementing new features or functionality. Provides complete workflow from specification through testing to implementation.
 
-- **`specification`**: Use when writing or updating spec.yaml files. Defines requirement format and user story structure.
+- **`specifying-requirements`**: Use when writing or updating spec.yaml files. Defines requirement format and user story structure.
 
 - **`acceptance-test`**: Use when writing acceptance tests or adding scenarios to spec.yaml. Defines Given/When/Then format and acceptance test patterns.
 

@@ -10,9 +10,9 @@ When developing ANY new feature or functionality, follow this strict workflow:
 ## Workflow Steps
 
 ### 1. Write Specification FIRST (spec.yaml)
-**Use the `specification` skill to write specifications following project conventions.**
+**Use the `specifying-requirements` skill to write specifications following project conventions.**
 
-The specification skill provides detailed guidelines for:
+The specifying-requirements skill provides detailed guidelines for:
 - Feature user story format (as_a, i_want, solutions)
 - Requirements organization and naming (REQ-XXX-NNN)
 - Requirement writing guidelines (atomic, testable, present tense)
