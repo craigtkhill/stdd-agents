@@ -54,24 +54,39 @@ Do NOT include AI attribution, co-authored-by lines, or any other footers.
 
 ## Before Committing
 
-1. Check for remote updates: `git fetch`
-2. Review your changes: `git status` and `git diff`
-3. Stage relevant files: `git add <files>`
-4. Write clear commit message
+**CRITICAL — all of the following MUST be true before committing:**
 
-## Commit Frequency
+1. All tests pass (GREEN)
+2. Pre-commit hooks pass — run `prek run --all-files` and fix every issue
+3. Check for remote updates: `git fetch`
+4. Review your changes: `git status` and `git diff`
+5. Stage relevant files: `git add <files>`
+6. Write clear commit message
 
-- Commit logical units of work
-- Don't commit half-finished features
-- Ensure tests pass before committing
-- One commit per requirement or bug fix (when practical)
+❌ **NEVER commit with failing tests**
+❌ **NEVER commit without running pre-commit hooks**
+❌ **NEVER commit half-finished work**
+
+## When to Commit
+
+Commit once per completed requirement in the STDD cycle:
+
+```
+spec written → tests RED → tests GREEN → hooks pass → COMMIT
+```
+
+- One commit per requirement (or tightly related group of requirements)
+- Each commit must represent a complete, working state
+- Do not batch multiple requirements into one commit
 
 ## Integration with STDD Workflow
 
 When following the spec-test-driven development workflow:
 
-1. After completing a requirement (spec + test + implementation)
-2. Ensure all tests pass
-3. Run any precommit hooks
-3. Commit with descriptive message
-4. Keep the commit message to a single line
+1. Pick a requirement from spec.yaml
+2. Write test → see RED
+3. Implement → see GREEN
+4. Run ALL tests → all pass
+5. Run `prek run --all-files` → all hooks pass
+6. Commit with a single-line conventional commit message
+7. Repeat for next requirement
