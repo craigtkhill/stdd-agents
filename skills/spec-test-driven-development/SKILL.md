@@ -9,6 +9,13 @@ When developing ANY new feature or functionality, follow this strict workflow:
 
 ## Workflow Steps
 
+### 0. Update Dependencies FIRST
+**Use the `update-dependencies` skill to update all dependencies before starting any new feature.**
+
+- Run before writing the spec for any new feature cycle
+- Ensures you build on up-to-date, secure dependencies
+- If updates cause test failures, resolve them before proceeding
+
 ### 1. Write Specification FIRST (spec.yaml)
 **Use the `specifying-requirements` skill to write specifications following project conventions.**
 
@@ -69,14 +76,15 @@ pre-commit run --all-files
 
 ## Do NOT Proceed Without
 
-1. ❌ Do NOT write implementation code before spec
-2. ❌ Do NOT write implementation code before tests
-3. ❌ Do NOT skip writing tests
-4. ❌ Do NOT write multiple assertions per test (unless justified)
-5. ❌ Do NOT skip running tests after implementation
-6. ❌ Do NOT skip running pre-commit hooks before completion
-7. ✅ DO write spec → tests → implementation → run tests → run pre-commit in that order
-8. ✅ DO get user approval on spec before proceeding
-9. ✅ DO use TodoWrite to track progress
-10. ✅ DO run tests and verify all pass
-11. ✅ DO run pre-commit hooks and fix all issues
+1. ❌ Do NOT write implementation code before updating dependencies
+2. ❌ Do NOT write implementation code before spec
+3. ❌ Do NOT write implementation code before tests
+4. ❌ Do NOT skip writing tests
+5. ❌ Do NOT write multiple assertions per test (unless justified)
+6. ❌ Do NOT skip running tests after implementation
+7. ❌ Do NOT skip running pre-commit hooks before completion
+8. ✅ DO update dependencies → write spec → tests → implementation → run tests → run pre-commit in that order
+9. ✅ DO get user approval on spec before proceeding
+10. ✅ DO use TodoWrite to track progress
+11. ✅ DO run tests and verify all pass
+12. ✅ DO run pre-commit hooks and fix all issues
