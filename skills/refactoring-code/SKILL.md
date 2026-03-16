@@ -177,6 +177,7 @@ After refactoring:
 - [ ] All tests still pass
 - [ ] No new compiler warnings
 - [ ] Code is more readable
+- [ ] Variable and function names are descriptive (no single-letter or abbreviated names)
 - [ ] Duplication is reduced or eliminated
 - [ ] Locality of behavior is improved or preserved
 - [ ] Performance is not degraded
@@ -224,6 +225,10 @@ Refactoring belongs in **Step 4** of the RED-GREEN-REFACTOR cycle:
 ### Refactoring Without Tests
 **Problem:** Changing code without a safety net
 **Solution:** Write tests first if they don't exist
+
+### Cryptic Naming
+**Problem:** Single-letter variables, abbreviations, or terse names that obscure intent (e.g. `d`, `tmp`, `val`, `mgr`)
+**Solution:** Use full, descriptive names that reveal purpose — rename during the REFACTOR phase whenever cryptic names are encountered
 
 ### Locality Violation Through Deduplication
 **Problem:** Extracting shared logic to a distant utility file when it only serves one context
