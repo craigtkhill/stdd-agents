@@ -52,6 +52,10 @@ prek install --hook-type commit-msg
 prek install --hook-type pre-push
 ```
 
+## Language-Specific Hooks
+
+- Rust: See [RUST.md](RUST.md) for Rust-specific hooks including test-first ordering enforcement
+
 ## Hook Stages
 
 Hooks are split across two stages:

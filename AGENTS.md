@@ -10,7 +10,7 @@
 |update-dependencies:{SKILL.md,PYTHON.md}
 |evaluation:{SKILL.md}
 |create-skill:{SKILL.md}
-|pre-commit-hooks:{SKILL.md}
+|pre-commit-hooks:{SKILL.md,RUST.md}
 
 ## 🚨 CRITICAL PRE-FLIGHT CHECK 🚨
 
