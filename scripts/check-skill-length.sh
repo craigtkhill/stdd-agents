@@ -2,7 +2,7 @@
 # Enforce that SKILL.md files do not exceed 300 lines.
 set -euo pipefail
 
-MAX_LINES=300
+MAX_LINES=250
 failed=0
 
 for file in "$@"; do
