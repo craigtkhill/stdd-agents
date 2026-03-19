@@ -8,6 +8,16 @@ description: Use when writing or updating spec.yaml files. Defines requirement f
 This skill defines how to write specifications that follow the project's conventions.
 **CRITICAL:** Stick to the Domain Specific Language in this document. Do not add your own extra keys or structure.
 
+## Before Writing a Spec
+
+**CRITICAL — before adding any requirements:**
+
+1. **Check for conflicting specs** — read any existing `spec.yaml` in the same feature area to avoid overlap
+2. **Check for duplicated requirements** — if a requirement already exists in another spec (even worded differently), do not restate it
+3. **Update the existing spec first** if one already covers this feature
+
+Requirement ID uniqueness is enforced by a linter — see `scripts/check-spec-ids.sh`.
+
 ## Specification Location
 
 **Specifications live close to the code** following the principle of locality of behavior:
