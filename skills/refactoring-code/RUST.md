@@ -265,6 +265,9 @@ cargo test
 
 # Check for unused imports
 cargo clippy -- -W unused_imports
+
+# Detect duplicate code
+cargo crap
 ```
 
 ### Common Errors

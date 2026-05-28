@@ -80,6 +80,7 @@ Use code search tools to find:
 
 **Search strategies:**
 - Run `polydup` to detect duplicate code across the codebase
+- Run `cargo crap` (Rust) to detect duplicate code across the codebase
 - Grep for similar function/method names
 - Search for similar algorithm patterns
 - Look for related types or interfaces
