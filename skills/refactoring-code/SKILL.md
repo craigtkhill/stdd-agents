@@ -79,8 +79,8 @@ Use code search tools to find:
 - Related utilities or helpers
 
 **Search strategies:**
-- Run `polydup` to detect duplicate code across the codebase
-- Run `cargo crap` (Rust) to detect duplicate code across the codebase
+- Run `polydup src/` to detect duplicate code across the codebase (install: `cargo install polydup`)
+  - Also run `polydup scan . --enable-type3` to catch structurally similar code with surface differences
 - Grep for similar function/method names
 - Search for similar algorithm patterns
 - Look for related types or interfaces
