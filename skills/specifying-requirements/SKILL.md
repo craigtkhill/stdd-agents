@@ -44,6 +44,9 @@ requirements:
     test: to-implement
     code: to-implement
     description: Specific, testable requirement
+    examples:
+      - input: {field: value}
+        output: {field: value}
   - id: REQ-XXX-002
     test: to-implement
     code: to-implement
@@ -116,6 +119,15 @@ The `feature` section captures the user story and possible solutions.
 2. Have I already stated this requirement elsewhere in the spec or in another spec file?
 3. Is this describing WHAT the system does for the user, or HOW it does it internally?
 4. Is this behavior already implemented and tested in an existing module that this feature will reuse?
+
+### Examples (Optional, Specification by Example)
+
+A requirement can carry an `examples` list — concrete `input`/`output` pairs that make an ambiguous rule unambiguous.
+
+- Only add examples when the description alone leaves a case open to interpretation (e.g. boundary values, edge cases)
+- Each example is a concrete case, not a restatement of the description
+- Keep `input`/`output` as flat key-value maps — no nested implementation objects
+- Not every requirement needs examples; skip them when the description is already unambiguous
 
 ### Scenarios Section (Optional)
 
