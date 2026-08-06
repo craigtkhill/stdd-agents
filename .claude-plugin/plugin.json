@@ -4,5 +4,6 @@
   "version": "1.2.0",
   "author": {
     "name": "Craig Hill"
-  }
+  },
+  "hooks": "./hooks/hooks.json"
 }
