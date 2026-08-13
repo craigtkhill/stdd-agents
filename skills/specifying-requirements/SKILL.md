@@ -144,6 +144,5 @@ This spec skill is **STEP 1** of the spec-test-driven development workflow:
 3. Implement Code (to pass tests)
 
 After completing the spec:
-1. Get user approval
-2. Proceed to writing tests based on requirements using TDD
-3. Follow stdd skill for remaining steps
+1. Proceed to writing tests based on requirements using TDD. Do not wait for user approval.
+2. Follow stdd skill for remaining steps

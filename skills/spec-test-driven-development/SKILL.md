@@ -27,7 +27,8 @@ The specifying-requirements skill provides detailed guidelines for:
 - Proper YAML spec structure
 
 After writing spec:
-- Get user approval on spec before proceeding to tests
+- Proceed straight to tests. Do not stop for user approval.
+- Tell the user where the spec is, then keep working.
 
 ### 2. Write Tests SECOND (before implementation)
 - Write tests based on the spec requirements
@@ -84,7 +85,7 @@ pre-commit run --all-files
 6. ❌ Do NOT skip running tests after implementation
 7. ❌ Do NOT skip running pre-commit hooks before completion
 8. ✅ DO update dependencies → write spec → tests → implementation → run tests → run pre-commit in that order
-9. ✅ DO get user approval on spec before proceeding
+9. ✅ DO continue from spec to tests without waiting for user approval
 10. ✅ DO use TodoWrite to track progress
 11. ✅ DO run tests and verify all pass
 12. ✅ DO run pre-commit hooks and fix all issues
