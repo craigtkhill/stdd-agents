@@ -1,6 +1,6 @@
 ---
 name: spec-test-driven-development
-description: Use when user requests new features or functionality. Defines complete workflow from specification through testing to implementation.
+description: Defines complete workflow from specification through testing to implementation.
 ---
 
 # Spec-TDD Development Workflow
