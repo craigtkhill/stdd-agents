@@ -30,9 +30,11 @@ Use the conventional commits style:
 - **ci:** CI/CD configuration changes
 - **build:** Build system changes
 
+Pick the type from what kind of file changed, not from the intent behind the change. Use `feat`/`fix` only for changes to code.
+
 ### Scope (Optional)
 
-Add scope in parentheses to provide additional context:
+Add scope in parentheses to provide additional context. Use the narrowest name that identifies what changed. Prefer the specific file, module, or component over a parent folder that holds many of them.
 
 ### Breaking Changes
 
