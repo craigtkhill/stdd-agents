@@ -64,6 +64,15 @@ Duplicated logic is not just a style concern — it is a correctness risk. When 
 - When a helper is only used in one place, keep it local to that place
 - When splitting a file, keep tightly coupled concepts in the same module
 
+### 4. Strip AI-Added Comments
+
+Remove any comment that an AI agent added, unless one of these is true:
+
+- The comment was already in the file before the AI agent's changes.
+- The comment is an edit to a comment that was already there (an update, not a new comment).
+
+**How to apply:** Before the refactor is done, diff the AI agent's changes against the file's prior state. Delete a comment only if the diff shows it as new. Keep a comment if the diff shows it as pre-existing or as a modified version of a pre-existing line.
+
 ---
 
 ## Refactoring Workflow
@@ -149,6 +158,7 @@ After refactoring:
 - [ ] Locality of behavior is improved or preserved
 - [ ] Performance is not degraded
 - [ ] Documentation is updated
+- [ ] AI-added comments are stripped (kept only if pre-existing or an update to a pre-existing comment)
 
 ---
 
