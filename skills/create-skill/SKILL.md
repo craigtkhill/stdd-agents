@@ -11,20 +11,20 @@ Skills in for Agents provide reusable workflows and guidelines. This skill docum
 
 ## Required File Structure
 
-These skills are designed to be Agentic Terminal User Interface (ATUI) agnostic. They live in the dotfolders for the agentic application
+These skills are designed to be agent harness agnostic. They live in the dotfolders for the agentic application
 examples include.
 ```
 .claude/
 .codex/
-.gemini/
 .opencode/
+.pi/
 ```
 
-Henceforth, we will use .atui/ as shorthand
+Henceforth, we will use .harness/ as shorthand
 
 Every skill must have:
 ```
-.atui/skills/skill-name/
+.harness/skills/skill-name/
 ├── SKILL.md (REQUIRED - main skill file with frontmatter)
 ├── supporting-file.md (optional)
 └── templates/ (optional)
@@ -46,7 +46,7 @@ description: Brief description of what this skill does and when to use it
 **Frontmatter Rules:**
 - `name`: Lowercase letters, numbers, hyphens only (max 64 chars)
 - `description`: Explain WHAT it does + WHEN to use it (max 1024 chars)
-- Critical: ATUIs use description for automatic skill discovery
+- Critical: agent harnesses use description for automatic skill discovery
 
 ### 2. Main Content
 
@@ -108,7 +108,7 @@ Additionally register skills to the projects AGENTS.md file.
 
 When creating a new skill:
 
-- [ ] Create directory: `.atui/skills/skill-name/`
+- [ ] Create directory: `.harness/skills/skill-name/`
 - [ ] Create `SKILL.md` with YAML frontmatter
 - [ ] Add `name` field (lowercase, hyphens, max 64 chars)
 - [ ] Add `description` field (WHAT + WHEN, max 1024 chars)

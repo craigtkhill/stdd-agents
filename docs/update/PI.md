@@ -1,11 +1,11 @@
-# Update STDD Agents - Goose
+# Update STDD Agents - Pi
 
 Run these commands from your **project root**.
 
 ```bash
-cd .goose
+cd .pi
 git pull origin main
 cd ..
-git add .goose
+git add .pi
 git commit -m "chore: update stdd-agents submodule"
 ```

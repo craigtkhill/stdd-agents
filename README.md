@@ -13,29 +13,28 @@
 
 **Agents and configs following a Spec-Test-Driven Development process**
 
-This repository is designed for **Agentic Terminal User Interfaces (ATUIs)** like:
+This repository is designed for **agent harnesses** like:
 - **Claude Code**
 - **Codex**
 - **OpenCode**
-- **Gemini CLI**
+- **Pi**
 
 
-STDD Agents provides a structured workflow for developing applications using ATUIs, emphasizing specification-first development with comprehensive testing to ensure stability while moving with higher velocity.
+STDD Agents provides a structured workflow for developing applications using agent harnesses, emphasizing specification-first development with comprehensive testing to ensure stability while moving with higher velocity.
 
-*Note.* The aspiration is to make this toolkit ATUI agnostic. However, it is currently heavily configured for Claude Code.
+*Note.* The aspiration is to make this toolkit agent harness agnostic. However, it is currently heavily configured for Claude Code.
 
 ## Quick Start
 
 ### Installation
 
-Choose your ATUI and follow the installation guide:
+Choose your agent harness and follow the installation guide:
 
 - **[Claude Code](docs/install/CLAUDE-CODE.md)** - Setup for Claude Code users
 - **[Codex](docs/install/CODEX.md)** - Setup for Codex users
 - **[OpenCode](docs/install/OPENCODE.md)** - Setup for OpenCode users
-- **[Gemini CLI](docs/install/GEMINI.md)** - Setup for Gemini CLI users
-- **[Goose](docs/install/GOOSE.md)** - Setup for Goose users
-- **[Other Agents](docs/install/OTHER-AGENTS.md)** - Setup for other ATUIs
+- **[Pi](docs/install/PI.md)** - Setup for Pi users
+- **[Other Agents](docs/install/OTHER-AGENTS.md)** - Setup for other agent harnesses
 
 ### Install as Claude Code Plugin
 

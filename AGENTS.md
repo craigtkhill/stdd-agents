@@ -1,4 +1,4 @@
-[Skills Index]|roots: .claude/skills,.codex/skills,.opencode/skills,.gemini/skills,.goose/skills
+[Skills Index]|roots: .claude/skills,.codex/skills,.opencode/skills,.pi/skills
 |IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning for any skill tasks.
 |spec-test-driven-development:{SKILL.md}
 |specifying-requirements:{SKILL.md}

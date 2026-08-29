@@ -1,13 +1,13 @@
-# Update STDD Agents - Other ATUIs
+# Update STDD Agents - Other Agent Harnesses
 
 Run these commands from your **project root**.
 
-Replace `<atui-name>` with your ATUI's config directory name (e.g., `claude`, `cursor`, `codex`).
+Replace `<harness-name>` with your agent harness's config directory name (e.g., `claude`, `cursor`, `codex`).
 
 ```bash
-cd .<atui-name>
+cd .<harness-name>
 git pull origin main
 cd ..
-git add .<atui-name>
+git add .<harness-name>
 git commit -m "chore: update stdd-agents submodule"
 ```
