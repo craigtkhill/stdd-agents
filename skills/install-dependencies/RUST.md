@@ -47,6 +47,15 @@ cargo update
 cargo build
 ```
 
+## Checking Available Features
+
+Before enabling a crate feature, run `cargo info <crate-name>` to see its available features. Enable only the features you need:
+
+```toml
+[dependencies]
+tokio = { version = "*", features = ["rt", "macros"] }
+```
+
 ## Lock File
 
 Rust uses `Cargo.lock` to lock resolved versions. Always commit this file after adding/updating dependencies.
