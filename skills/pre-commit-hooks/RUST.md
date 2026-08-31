@@ -78,14 +78,14 @@ exit $failed
 
 ## Pre-Push Hooks
 
-### cargo-test
+### cargo-nextest
 
 Runs the full test suite before pushing.
 
 ```yaml
-- id: cargo-test
-  name: cargo test
-  entry: cargo test
+- id: cargo-nextest
+  name: cargo nextest
+  entry: cargo nextest run
   language: system
   pass_filenames: false
   stages: [pre-push]

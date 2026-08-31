@@ -107,7 +107,7 @@ pub use feature::{Model1, handle_action};
 ### Step 5: Run Tests
 
 ```bash
-cargo test
+cargo nextest run
 cargo clippy
 cargo build
 ```
@@ -261,7 +261,7 @@ cargo build
 cargo clippy
 
 # Run all tests
-cargo test
+cargo nextest run
 
 # Check for unused imports
 cargo clippy -- -W unused_imports
@@ -325,7 +325,7 @@ When splitting a Rust file:
 - [ ] Add `pub use` re-exports for compatibility
 - [ ] Update parent `mod`/`lib.rs` declarations
 - [ ] Run `cargo build`
-- [ ] Run `cargo test`
+- [ ] Run `cargo nextest run`
 - [ ] Run `cargo clippy`
 - [ ] Check for unused imports
 - [ ] Commit working code

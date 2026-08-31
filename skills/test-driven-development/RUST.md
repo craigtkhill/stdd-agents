@@ -165,44 +165,50 @@ fn test_should_parse_and_validate_complex_structure() {
 
 **Default rule**: Write one assert per test unless assertions are intrinsically coupled.
 
-## Running Tests with Cargo
+## Running Tests with Nextest
 
-Use `cargo` as the build tool and test runner.
+Use `cargo` as the build tool and `cargo-nextest` as the test runner (`cargo install cargo-nextest`). Nextest runs tests in a separate process per test and is significantly faster than `cargo test` on multi-test suites.
 
 ### Run single test (during TDD RED/GREEN phases):
 ```bash
-cargo test test_should_validate_input -- --exact --nocapture
+cargo nextest run -E 'test(test_should_validate_input)'
 ```
 
 ### Run all tests matching a pattern:
 ```bash
-cargo test validation
+cargo nextest run validation
 ```
 
 ### Run all tests in a module:
 ```bash
-cargo test feature::tests
+cargo nextest run feature::tests
 ```
 
 ### Run ALL tests (VERIFY phase):
 ```bash
-cargo test
+cargo nextest run
 ```
 
-### Run tests with output (show println! statements):
+### Run tests with output (show println! statements, even on pass):
 ```bash
-cargo test -- --nocapture
+cargo nextest run --no-capture
 ```
 
 ### Run integration tests only:
 ```bash
-cargo test --test '*'
+cargo nextest run --test '*'
 ```
 
 ### Run with specific number of threads:
 ```bash
-cargo test -- --test-threads=1  # Sequential
-cargo test -- --test-threads=4  # Parallel with 4 threads
+cargo nextest run --test-threads=1  # Sequential
+cargo nextest run --test-threads=4  # Parallel with 4 threads
+```
+
+### Doctests
+Nextest does not run doctests. Run them separately:
+```bash
+cargo test --doc
 ```
 
 ## Test Organization Patterns
@@ -314,27 +320,22 @@ fn test_model_constraints() {
 
 ### View detailed error with backtrace:
 ```bash
-RUST_BACKTRACE=1 cargo test test_name
+RUST_BACKTRACE=1 cargo nextest run test_name
 ```
 
 ### Run test with full backtrace:
 ```bash
-RUST_BACKTRACE=full cargo test test_name
-```
-
-### Show output from passing tests:
-```bash
-cargo test -- --show-output
+RUST_BACKTRACE=full cargo nextest run test_name
 ```
 
 ### Run ignored tests:
 ```bash
-cargo test -- --ignored
+cargo nextest run --run-ignored ignored-only
 ```
 
 ### Run specific test with verbose output:
 ```bash
-cargo test test_name -- --exact --nocapture --show-output
+cargo nextest run --no-capture -E 'test(test_name)'
 ```
 
 ## Test Configuration
