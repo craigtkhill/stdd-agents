@@ -11,6 +11,7 @@
 |evaluation:{SKILL.md}
 |create-skill:{SKILL.md}
 |pre-commit-hooks:{SKILL.md,RUST.md}
+|error-handling:{SKILL.md}
 
 ## 🚨 CRITICAL PRE-FLIGHT CHECK 🚨
 
@@ -52,3 +53,5 @@ Development workflow skills are available to guide common tasks:
 - **`create-skill`**: Use when creating or modifying skills. Defines skill file structure, naming conventions, and integration patterns.
 
 - **`pre-commit-hooks`**: Use when running pre-commit hooks manually. This project uses `prek`, not `pre-commit`. Defines correct commands for running hooks.
+
+- **`error-handling`**: Use when writing, reviewing, or refactoring a try/except (or edge-case branch). Defines when to add a handler, when to remove one, and how to justify keeping it.
